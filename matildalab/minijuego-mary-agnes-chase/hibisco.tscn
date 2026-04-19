@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://u5uu8nfsiryx"]
+
+[ext_resource type="PackedScene" uid="uid://d78rxhadrt74" path="res://minijuego-mary-agnes-chase/flor.tscn" id="1_ohurq"]
+[ext_resource type="Texture2D" uid="uid://dpewkpfl6lwqo" path="res://minijuego-mary-agnes-chase/assets/petalos flor salmon.png" id="2_1vcpk"]
+[ext_resource type="Texture2D" uid="uid://cgfx4duturd31" path="res://minijuego-mary-agnes-chase/assets/centro flor salmon.png" id="3_deiwj"]
+[ext_resource type="Texture2D" uid="uid://cy523v6sesm4f" path="res://minijuego-mary-agnes-chase/assets/tallo flor salmon.png" id="4_lnxyg"]
+[ext_resource type="Texture2D" uid="uid://c13xk8wp6ovhp" path="res://minijuego-mary-agnes-chase/assets/boceto flor salmon.png" id="5_hhtyy"]
+
+[node name="Flor" instance=ExtResource("1_ohurq")]
+nombre_flor = "un hibisco"
+sprite_petalos = ExtResource("2_1vcpk")
+sprite_centro = ExtResource("3_deiwj")
+sprite_tallo = ExtResource("4_lnxyg")
+boceto = ExtResource("5_hhtyy")
+color_petalos = Color(1, 0.8, 0.745098, 1)
+color_centro = Color(1, 0.505882, 0.380392, 1)
+color_tallo = Color(0.333333, 0.662745, 0.192157, 1)

@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://db4cbo06m276m"]
+
+[ext_resource type="Script" uid="uid://blnujmtb2071e" path="res://tutorial.gd" id="1_v36xt"]
+[ext_resource type="VideoStream" uid="uid://dxxy5xfvgnsn7" path="res://minijuego-mary-agnes-chase/videos/videotutorial.ogv" id="2_0cr88"]
+[ext_resource type="Texture2D" uid="uid://chn06who8dlwt" path="res://minijuego-mary-agnes-chase/assets/botonPlay.png" id="2_hu44a"]
+[ext_resource type="Texture2D" uid="uid://upu2owghfa4f" path="res://minijuego-mary-agnes-chase/assets/botonPlayPulsado.png" id="3_0cr88"]
+[ext_resource type="FontFile" uid="uid://bxvuw4qvy4rsd" path="res://Fredoka_Condensed-Bold.ttf" id="4_0cr88"]
+[ext_resource type="Texture2D" uid="uid://8hn7xo5gi7nh" path="res://minijuego-mary-agnes-chase/assets/cientifica.png" id="4_4t6hg"]
+[ext_resource type="Texture2D" uid="uid://dsf613lxutjrb" path="res://assets/bocadillo.png" id="5_7vrqn"]
+[ext_resource type="AudioStream" uid="uid://ppk4kx8bkkiu" path="res://minijuego-mary-agnes-chase/sonidos/ExplicacionMaryAgnes.mp3" id="8_vwbe6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgksj"]
+bg_color = Color(0.843221, 0.572986, 0.698951, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+shadow_color = Color(0.577929, 0.297485, 0.437225, 1)
+shadow_size = 100
+
+[node name="Tutorial" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_v36xt")
+
+[node name="Fondo" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 1860.0
+offset_bottom = 990.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgksj")
+
+[node name="NombreCientifica" type="Label" parent="."]
+layout_mode = 0
+offset_left = 891.0
+offset_top = 103.0
+offset_right = 1854.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0.898729, 0.702623, 0.789586, 1)
+theme_override_colors/font_outline_color = Color(0.582871, 0.300704, 0.441247, 1)
+theme_override_constants/shadow_offset_x = 50
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 110
+text = "MARY AGNES CHASE"
+
+[node name="Videotutorial" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 2
+offset_left = 850.0
+offset_top = 270.0
+offset_right = 1810.0
+offset_bottom = 810.0
+size_flags_vertical = 4
+mouse_filter = 2
+stream = ExtResource("2_0cr88")
+autoplay = true
+expand = true
+loop = true
+
+[node name="BotonPlay" type="TextureButton" parent="Videotutorial"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -240.0
+offset_right = 256.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(256, 256)
+texture_normal = ExtResource("2_hu44a")
+texture_pressed = ExtResource("3_0cr88")
+
+[node name="Cientifica" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 61.0001
+offset_top = 121.0
+offset_right = 1661.0
+offset_bottom = 1213.0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
+texture = ExtResource("4_4t6hg")
+
+[node name="Bocadillo" type="TextureRect" parent="Cientifica"]
+layout_mode = 0
+offset_left = 902.5
+offset_top = -28.75
+offset_right = 1414.5
+offset_bottom = 483.25
+scale = Vector2(-0.7, 0.7)
+texture = ExtResource("5_7vrqn")
+
+[node name="Instrucciones" type="Label" parent="Cientifica/Bocadillo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 145.786
+offset_top = -113.143
+offset_right = 444.786
+offset_bottom = 99.8574
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, 1)
+theme_override_colors/font_color = Color(0.631373, 0.34902, 0.486275, 1)
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 60
+text = "¡Pinta las 
+flores igual!"
+
+[node name="ExplicacionVoz" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vwbe6")
+autoplay = true

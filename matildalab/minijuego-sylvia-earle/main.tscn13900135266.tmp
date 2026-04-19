@@ -1,0 +1,116 @@
+[gd_scene load_steps=20 format=3 uid="uid://dmylhoys5dd5f"]
+
+[ext_resource type="Script" uid="uid://bfd8k2xieynom" path="res://main.gd" id="1_074og"]
+[ext_resource type="Script" uid="uid://gfrrhyyh7frj" path="res://generador_obstaculos.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://coo2ct7oe5siu" path="res://peces.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://crgl1acea76xw" path="res://coral.tscn" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://df1phy68oniko" path="res://fondos.gd" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://ddpr86bx6m5po" path="res://assets/fondo.png" id="5_w48qg"]
+[ext_resource type="Texture2D" uid="uid://dhti6nu0drajk" path="res://assets/sylvia.png" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bn4g4nn3wdwvt" path="res://character_body_2d.gd" id="6_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://cb8bqce6pbaqh" path="res://assets/flecha.png" id="7_kek77"]
+[ext_resource type="Texture2D" uid="uid://bdcaqj0xyvead" path="res://assets/flechapresionada.png" id="8_4c57u"]
+[ext_resource type="Script" uid="uid://b11ihhjhkvlh2" path="res://canvas_layer.gd" id="8_w48qg"]
+[ext_resource type="Texture2D" uid="uid://dxnc127kobqbe" path="res://assets/flechaabajo.png" id="9_efxa6"]
+[ext_resource type="Texture2D" uid="uid://cq4s0acanfo2d" path="res://assets/flechapresionadaabajo.png" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://sxxmyp2bn7cr" path="res://assets/flechadeshabilitada.png" id="11_w48qg"]
+[ext_resource type="Texture2D" uid="uid://c5cu5pxft1fmm" path="res://assets/flechadeshabilitadaabajo.png" id="14_vivmo"]
+[ext_resource type="Script" uid="uid://dc660bp675e55" path="res://vidas.gd" id="15_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://cow5hqpdamqyp" path="res://assets/vida.png" id="15_vivmo"]
+[ext_resource type="Texture2D" uid="uid://c4bidm873r711" path="res://assets/vidaperdida.png" id="17_yaehf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
+size = Vector2(440, 139)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_074og")
+
+[node name="GeneradorObstaculos" type="Node2D" parent="."]
+script = ExtResource("1_ig7tw")
+obstaculos = Array[PackedScene]([ExtResource("2_h2yge"), ExtResource("3_1bvp3")])
+
+[node name="Timer" type="Timer" parent="GeneradorObstaculos"]
+wait_time = 10.0
+autostart = true
+
+[node name="Fondos" type="Node2D" parent="."]
+script = ExtResource("4_1bvp3")
+
+[node name="Fondo1" type="Sprite2D" parent="Fondos"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_w48qg")
+centered = false
+
+[node name="Fondo2" type="Sprite2D" parent="Fondos"]
+position = Vector2(1920, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_w48qg")
+centered = false
+flip_h = true
+
+[node name="Buceadora" type="CharacterBody2D" parent="."]
+position = Vector2(250, 500)
+collision_mask = 2
+script = ExtResource("6_ycdy4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buceadora"]
+position = Vector2(4, 6)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Buceadora"]
+texture = ExtResource("6_7mycd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("8_w48qg")
+
+[node name="FlechaArriba" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -476.0
+offset_top = -383.0
+offset_right = 36.0
+offset_bottom = 129.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("7_kek77")
+texture_pressed = ExtResource("8_4c57u")
+texture_disabled = ExtResource("11_w48qg")
+
+[node name="FlechaAbajo" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1628.0
+offset_top = 707.0
+offset_right = 2140.0
+offset_bottom = 1219.0
+scale = Vector2(0.74, 0.74)
+texture_normal = ExtResource("9_efxa6")
+texture_pressed = ExtResource("11_dg77c")
+texture_disabled = ExtResource("14_vivmo")
+
+[node name="Vidas" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 1544.0
+offset_bottom = 512.0
+scale = Vector2(0.25, 0.25)
+script = ExtResource("15_2cqfq")
+vida_perdida = ExtResource("17_yaehf")
+
+[node name="Vida1" type="TextureRect" parent="CanvasLayer/Vidas"]
+layout_mode = 2
+texture = ExtResource("15_vivmo")
+
+[node name="Vida2" type="TextureRect" parent="CanvasLayer/Vidas"]
+layout_mode = 2
+texture = ExtResource("15_vivmo")
+
+[node name="Vida3" type="TextureRect" parent="CanvasLayer/Vidas"]
+layout_mode = 2
+texture = ExtResource("15_vivmo")
+
+[connection signal="timeout" from="GeneradorObstaculos/Timer" to="GeneradorObstaculos" method="_on_timer_timeout"]
+[connection signal="carril_cambiado" from="Buceadora" to="CanvasLayer" method="_on_buceadora_carril_cambiado"]
+[connection signal="perder_vida" from="Buceadora" to="CanvasLayer/Vidas" method="_on_buceadora_perder_vida"]
+[connection signal="pressed" from="CanvasLayer/FlechaArriba" to="Buceadora" method="_on_flecha_arriba_pressed"]
+[connection signal="pressed" from="CanvasLayer/FlechaAbajo" to="Buceadora" method="_on_flecha_abajo_pressed"]

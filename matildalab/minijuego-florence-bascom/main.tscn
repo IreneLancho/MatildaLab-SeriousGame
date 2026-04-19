@@ -1,0 +1,138 @@
+[gd_scene load_steps=12 format=3 uid="uid://qx8alb16cwx3"]
+
+[ext_resource type="Script" uid="uid://b6hf0wa04ug55" path="res://minijuego-florence-bascom/main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://jwd8pqxkondw" path="res://minijuego-florence-bascom/mineral.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://bmi3kof37vipb" path="res://minijuego-florence-bascom/assets/Fondo.jpeg" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dwlvpyneynuhy" path="res://minijuego-florence-bascom/assets/Amatista.png" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dqbg10xfl5lk0" path="res://minijuego-florence-bascom/assets/Zafiro.png" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://cl0mbj8bkghrp" path="res://minijuego-florence-bascom/assets/Pirita.png" id="6_5vw27"]
+[ext_resource type="AudioStream" uid="uid://du4qlouoin0jq" path="res://minijuego-florence-bascom/sonidos/audiocoffee-positive-happy-kids-background-468931.mp3" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://bsym0mrmlronc" path="res://minijuego-florence-bascom/tutorial.tscn" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cy4lli4w6o4d1" path="res://assets/botonAyuda.png" id="8_13srr"]
+[ext_resource type="Texture2D" uid="uid://m5amf8nbk8fi" path="res://assets/botonAyudaPresionado.png" id="9_7m2u2"]
+[ext_resource type="PackedScene" uid="uid://deyl2rwqqgjs" path="res://minijuego-florence-bascom/florence.tscn" id="11_7m2u2"]
+
+[node name="Main" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+script = ExtResource("1_ig7tw")
+
+[node name="Fondo" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+texture = ExtResource("2_7mycd")
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_272bh")
+volume_db = -35.0
+parameters/looping = true
+
+[node name="Minijuego" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Minerales" type="GridContainer" parent="Minijuego"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -606.0
+offset_top = -325.0
+offset_right = 606.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 50
+columns = 4
+
+[node name="Esmeralda1" parent="Minijuego/Minerales" instance=ExtResource("2_0xm2m")]
+layout_mode = 2
+
+[node name="Esmeralda2" parent="Minijuego/Minerales" instance=ExtResource("2_0xm2m")]
+layout_mode = 2
+
+[node name="Amatista1" parent="Minijuego/Minerales" instance=ExtResource("2_0xm2m")]
+layout_mode = 2
+id_mineral = 1
+
+[node name="Icono" parent="Minijuego/Minerales/Amatista1/Dibujos/Frente" index="1"]
+texture = ExtResource("4_7mycd")
+
+[node name="Amatista2" parent="Minijuego/Minerales" instance=ExtResource("2_0xm2m")]
+layout_mode = 2
+id_mineral = 1
+
+[node name="Icono" parent="Minijuego/Minerales/Amatista2/Dibujos/Frente" index="1"]
+texture = ExtResource("4_7mycd")
+
+[node name="Zafiro1" parent="Minijuego/Minerales" instance=ExtResource("2_0xm2m")]
+layout_mode = 2
+id_mineral = 2
+
+[node name="Icono" parent="Minijuego/Minerales/Zafiro1/Dibujos/Frente" index="1"]
+texture = ExtResource("5_272bh")
+
+[node name="Zafiro2" parent="Minijuego/Minerales" instance=ExtResource("2_0xm2m")]
+layout_mode = 2
+id_mineral = 2
+
+[node name="Icono" parent="Minijuego/Minerales/Zafiro2/Dibujos/Frente" index="1"]
+texture = ExtResource("5_272bh")
+
+[node name="Pirita1" parent="Minijuego/Minerales" instance=ExtResource("2_0xm2m")]
+layout_mode = 2
+id_mineral = 3
+
+[node name="Icono" parent="Minijuego/Minerales/Pirita1/Dibujos/Frente" index="1"]
+texture = ExtResource("6_5vw27")
+
+[node name="Pirita2" parent="Minijuego/Minerales" instance=ExtResource("2_0xm2m")]
+layout_mode = 2
+id_mineral = 3
+
+[node name="Icono" parent="Minijuego/Minerales/Pirita2/Dibujos/Frente" index="1"]
+texture = ExtResource("6_5vw27")
+
+[node name="Interfaz" type="Node" parent="Minijuego"]
+
+[node name="BotonAyuda" type="TextureButton" parent="Minijuego/Interfaz"]
+offset_left = 1715.2
+offset_top = 50.0
+offset_right = 2227.2
+offset_bottom = 562.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_13srr")
+texture_pressed = ExtResource("9_7m2u2")
+
+[node name="Florence" parent="Minijuego/Interfaz" instance=ExtResource("11_7m2u2")]
+layer = 0
+
+[node name="TutorialLayer" type="CanvasLayer" parent="Minijuego/Interfaz"]
+
+[node name="Tutorial" parent="Minijuego/Interfaz/TutorialLayer" instance=ExtResource("8_5vw27")]
+
+[node name="ExplicacionVoz" parent="Minijuego/Interfaz/TutorialLayer/Tutorial" index="4"]
+autoplay = true
+
+[connection signal="pressed" from="Minijuego/Interfaz/BotonAyuda" to="Minijuego/Interfaz/TutorialLayer/Tutorial" method="_on_boton_ayuda_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/TutorialLayer/Tutorial/Videotutorial/BotonPlay" to="." method="iniciar_juego"]
+[connection signal="pressed" from="Minijuego/Interfaz/TutorialLayer/Tutorial/Videotutorial/BotonPlay" to="Minijuego/Interfaz/TutorialLayer/Tutorial" method="_on_boton_play_pressed"]
+
+[editable path="Minijuego/Minerales/Esmeralda1"]
+[editable path="Minijuego/Minerales/Esmeralda2"]
+[editable path="Minijuego/Minerales/Amatista1"]
+[editable path="Minijuego/Minerales/Amatista2"]
+[editable path="Minijuego/Minerales/Zafiro1"]
+[editable path="Minijuego/Minerales/Zafiro2"]
+[editable path="Minijuego/Minerales/Pirita1"]
+[editable path="Minijuego/Minerales/Pirita2"]
+[editable path="Minijuego/Interfaz/TutorialLayer/Tutorial"]

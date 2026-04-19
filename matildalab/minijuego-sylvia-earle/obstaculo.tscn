@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dowue4oe3eu6y"]
+
+[ext_resource type="Script" uid="uid://bq81mr1wbksak" path="res://obstáculo.gd" id="1_phkyr"]
+[ext_resource type="Texture2D" uid="uid://uvj3k2312kj" path="res://assets/coral.png" id="2_61ayu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32act"]
+radius = 181.0
+height = 454.0
+
+[node name="Obstaculo" type="Area2D"]
+position = Vector2(600, 0)
+scale = Vector2(0.25, 0.25)
+collision_layer = 2
+script = ExtResource("1_phkyr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17, 4)
+shape = SubResource("CapsuleShape2D_32act")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_61ayu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

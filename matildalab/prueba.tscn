@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvwltjq7riirp"]
+
+[ext_resource type="Texture2D" uid="uid://dc4xyaobyd71n" path="res://minijuego-sylvia-earle/assets/cientifica.png" id="1_71jk5"]
+
+[sub_resource type="Animation" id="Animation_mt5rx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Brazo:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_71jk5"]
+resource_name = "saludar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Brazo:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rcdd3"]
+_data = {
+&"RESET": SubResource("Animation_mt5rx"),
+&"saludar": SubResource("Animation_71jk5")
+}
+
+[node name="Prueba" type="Polygon2D"]
+texture = ExtResource("1_71jk5")
+skeleton = NodePath("Skeleton2D")
+polygon = PackedVector2Array(597.447, 617.608, 384.859, 568.004, 315.768, 617.608, 328.169, 670.755, 367.144, 702.643, 404.347, 707.957, 468.123, 688.47, 551.386, 706.186, 438.006, 759.333, 452.179, 839.053, 436.235, 996.722, 494.696, 991.407, 549.615, 1002.04, 563.787, 963.062, 547.843, 807.165, 588.589, 778.82, 625.792, 860.312, 668.309, 858.54, 724.999, 853.226, 781.689, 727.445, 863.181, 670.755, 990.734, 651.267, 1058.05, 601.664, 1242.3, 591.034, 1318.47, 591.034, 1368.08, 553.832, 1350.36, 484.741, 1297.21, 431.594, 1238.75, 504.228, 1199.78, 518.4, 1221.04, 463.482, 1236.98, 389.076, 1261.78, 238.494, 1189.15, 249.123, 1169.66, 291.64, 1079.31, 266.839, 1008.45, 300.498, 935.815, 327.072, 893.298, 387.305, 854.323, 420.964, 783.461, 445.766, 742.715, 438.68, 675.396, 376.675, 634.65, 435.137, 625.792, 495.37, 643.507, 539.659, 686.025, 546.745, 650.594, 585.72, 652.365, 651.267)
+uv = PackedVector2Array(597.447, 617.608, 384.859, 568.004, 315.768, 617.608, 328.169, 670.755, 367.144, 702.643, 404.347, 707.957, 468.123, 688.47, 551.386, 706.186, 438.006, 759.333, 452.179, 839.053, 436.235, 996.722, 494.696, 991.407, 549.615, 1002.04, 563.787, 963.062, 547.843, 807.165, 588.589, 778.82, 625.792, 860.312, 668.309, 858.54, 724.999, 853.226, 781.689, 727.445, 863.181, 670.755, 990.734, 651.267, 1058.05, 601.664, 1242.3, 591.034, 1318.47, 591.034, 1368.08, 553.832, 1350.36, 484.741, 1297.21, 431.594, 1238.75, 504.228, 1199.78, 518.4, 1221.04, 463.482, 1236.98, 389.076, 1261.78, 238.494, 1189.15, 249.123, 1169.66, 291.64, 1079.31, 266.839, 1008.45, 300.498, 935.815, 327.072, 893.298, 387.305, 854.323, 420.964, 783.461, 445.766, 742.715, 438.68, 675.396, 376.675, 634.65, 435.137, 625.792, 495.37, 643.507, 539.659, 686.025, 546.745, 650.594, 585.72, 652.365, 651.267)
+bones = ["Torso", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Brazo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="Torso" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(496, 768)
+rotation = -0.421037
+scale = Vector2(34.3821, 3.06584)
+rest = Transform2D(31.3794, -14.0522, 1.25303, 2.79809, 496, 768)
+
+[node name="Brazo" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(1079, 549)
+scale = Vector2(15.4183, 2.29664)
+rest = Transform2D(15.4183, 0, 0, 2.29664, 1079, 549)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rcdd3")
+}

@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhvvwikuoobuk"]
+
+[ext_resource type="PackedScene" uid="uid://d78rxhadrt74" path="res://minijuego-mary-agnes-chase/flor.tscn" id="1_a4jje"]
+[ext_resource type="Texture2D" uid="uid://of53ph1y7f8l" path="res://minijuego-mary-agnes-chase/assets/petalos flor morada.png" id="2_yfvhe"]
+[ext_resource type="Texture2D" uid="uid://dbcwum6hb5huk" path="res://minijuego-mary-agnes-chase/assets/tallo flor morada.png" id="3_s5rae"]
+[ext_resource type="Texture2D" uid="uid://dqpsiby137d37" path="res://minijuego-mary-agnes-chase/assets/boceto flor morada.png" id="4_vtr1e"]
+
+[node name="Flor" instance=ExtResource("1_a4jje")]
+nombre_flor = "una violeta"
+sprite_petalos = ExtResource("2_yfvhe")
+sprite_tallo = ExtResource("3_s5rae")
+boceto = ExtResource("4_vtr1e")
+color_petalos = Color(0.921569, 0.654902, 1, 1)
+color_tallo = Color(0.72549, 1, 0.643137, 1)

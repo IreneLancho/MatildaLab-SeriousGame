@@ -1,0 +1,229 @@
+[gd_scene load_steps=17 format=3 uid="uid://bcr4nl1xic28y"]
+
+[ext_resource type="Script" uid="uid://cco2guh8osm6s" path="res://fin_minijuego.gd" id="1_7uhur"]
+[ext_resource type="Texture2D" uid="uid://dc4xyaobyd71n" path="res://minijuego-sylvia-earle/assets/cientifica.png" id="2_figxk"]
+[ext_resource type="Texture2D" uid="uid://dsf613lxutjrb" path="res://assets/bocadillo.png" id="3_7uhur"]
+[ext_resource type="Texture2D" uid="uid://blrs4ke50drfk" path="res://assets/particula.png" id="4_a7eo1"]
+[ext_resource type="AudioStream" uid="uid://bli47b3wym5yh" path="res://minijuego-sylvia-earle/sonidos/piezaSylvia.mp3" id="5_6gk5d"]
+[ext_resource type="FontFile" uid="uid://bxvuw4qvy4rsd" path="res://Fredoka_Condensed-Bold.ttf" id="5_7uhur"]
+[ext_resource type="Texture2D" uid="uid://kkopm17w8d3g" path="res://minijuego-sylvia-earle/assets/piezasylvia.png" id="5_figxk"]
+[ext_resource type="AudioStream" uid="uid://b0mrvh3h23lw0" path="res://sonidos/victory.mp3" id="8_s1qng"]
+
+[sub_resource type="Gradient" id="Gradient_g6qnp"]
+offsets = PackedFloat32Array(0, 0.483051, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.133333, 0.286275, 0.560784, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lbl0b"]
+gradient = SubResource("Gradient_g6qnp")
+
+[sub_resource type="Curve" id="Curve_g6qnp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.409722, 1), 0.0, 0.0, 0, 0, Vector2(0.736111, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_s1qng"]
+curve = SubResource("Curve_g6qnp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wo26n"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 1000.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_s1qng")
+color_ramp = SubResource("GradientTexture1D_lbl0b")
+
+[sub_resource type="Animation" id="Animation_7uhur"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pieza:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pieza:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pieza/GPUParticles2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pieza/GPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lbl0b"]
+resource_name = "mostrar_pieza"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pieza:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1), Vector2(1.5, 1.5), Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pieza:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pieza/GPUParticles2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pieza/GPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pieza/MusicaRecompensa")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1qng"]
+_data = {
+&"RESET": SubResource("Animation_7uhur"),
+&"mostrar_pieza": SubResource("Animation_lbl0b")
+}
+
+[node name="FinMinijuego" type="Node2D"]
+script = ExtResource("1_7uhur")
+
+[node name="Cientifica" type="TextureRect" parent="."]
+offset_left = -237.0
+offset_top = 280.0
+offset_right = 1363.0
+offset_bottom = 1372.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_figxk")
+
+[node name="Bocadillo" type="TextureRect" parent="Cientifica"]
+layout_mode = 0
+offset_left = 1457.5
+offset_top = -60.0
+offset_right = 1969.5
+offset_bottom = 452.0
+rotation = -3.14159
+scale = Vector2(0.8, -0.8)
+texture = ExtResource("3_7uhur")
+
+[node name="Label" type="Label" parent="Cientifica/Bocadillo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.438
+offset_top = -140.375
+offset_right = 138.562
+offset_bottom = 87.625
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(134, 114)
+theme_override_colors/font_color = Color(0, 0.243137, 0.34902, 1)
+theme_override_fonts/font = ExtResource("5_7uhur")
+theme_override_font_sizes/font_size = 60
+text = "¡Muy bien!
+Toma esta 
+pieza"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FraseFinal" type="AudioStreamPlayer" parent="Cientifica/Bocadillo"]
+stream = ExtResource("5_6gk5d")
+
+[node name="Pieza" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_figxk")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Pieza"]
+visible = false
+z_index = -1
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 500
+texture = ExtResource("4_a7eo1")
+process_material = SubResource("ParticleProcessMaterial_wo26n")
+
+[node name="MusicaRecompensa" type="AudioStreamPlayer2D" parent="Pieza"]
+stream = ExtResource("8_s1qng")
+volume_db = -20.0
+
+[node name="Animador" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_s1qng")
+}

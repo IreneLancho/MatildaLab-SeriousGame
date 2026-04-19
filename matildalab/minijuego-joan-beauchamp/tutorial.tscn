@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://craf1ugaofje8"]
+
+[ext_resource type="Script" uid="uid://blnujmtb2071e" path="res://tutorial.gd" id="1_gacib"]
+[ext_resource type="VideoStream" uid="uid://byvj8ihea7w8l" path="res://minijuego-joan-beauchamp/videos/videotutorial.ogv" id="2_5mrt3"]
+[ext_resource type="Texture2D" uid="uid://nkthbljkfnlf" path="res://minijuego-joan-beauchamp/assets/botonPlay.png" id="3_0cr88"]
+[ext_resource type="FontFile" uid="uid://bxvuw4qvy4rsd" path="res://Fredoka_Condensed-Bold.ttf" id="4_0cr88"]
+[ext_resource type="Texture2D" uid="uid://b3xavoslxctky" path="res://minijuego-joan-beauchamp/assets/botonPlayPresionado.png" id="4_4t6hg"]
+[ext_resource type="Texture2D" uid="uid://dahfl2v88sjvd" path="res://minijuego-joan-beauchamp/assets/cientifica.png" id="5_7vrqn"]
+[ext_resource type="Texture2D" uid="uid://dsf613lxutjrb" path="res://assets/bocadillo.png" id="6_gacib"]
+[ext_resource type="AudioStream" uid="uid://6rp6lmj7gemd" path="res://minijuego-joan-beauchamp/sonidos/ExplicacionJoan.mp3" id="8_xirs1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgksj"]
+bg_color = Color(0.702235, 0.68404, 0.351141, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+shadow_color = Color(0.564979, 0.547357, 0.254827, 1)
+shadow_size = 100
+
+[node name="Tutorial" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gacib")
+
+[node name="Fondo" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 1860.0
+offset_bottom = 990.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgksj")
+
+[node name="NombreCientifica" type="Label" parent="."]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 108.0
+offset_right = 1168.0
+offset_bottom = 242.0
+theme_override_colors/font_color = Color(0.828333, 0.81052, 0.484179, 1)
+theme_override_colors/font_outline_color = Color(0.482731, 0.467024, 0.20793, 1)
+theme_override_constants/shadow_offset_x = 50
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 110
+text = "JOAN BEAUCHAMP"
+
+[node name="Videotutorial" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 2
+offset_left = 150.0
+offset_top = 270.0
+offset_right = 1110.0
+offset_bottom = 810.0
+size_flags_vertical = 4
+stream = ExtResource("2_5mrt3")
+autoplay = true
+expand = true
+loop = true
+
+[node name="BotonPlay" type="TextureButton" parent="Videotutorial"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -240.0
+offset_right = 256.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(256, 256)
+texture_normal = ExtResource("3_0cr88")
+texture_pressed = ExtResource("4_4t6hg")
+
+[node name="Cientifica" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2314.0
+offset_top = 12.0
+offset_right = 3914.0
+offset_bottom = 1104.0
+scale = Vector2(-1, 1)
+texture = ExtResource("5_7vrqn")
+
+[node name="Bocadillo" type="TextureRect" parent="Cientifica"]
+layout_mode = 0
+offset_left = 1246.0
+offset_top = 39.0
+offset_right = 1758.0
+offset_bottom = 551.0
+scale = Vector2(-0.7, 0.7)
+texture = ExtResource("6_gacib")
+
+[node name="Instrucciones" type="Label" parent="Cientifica/Bocadillo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -101.714
+offset_right = 218.0
+offset_bottom = 49.2855
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.846533, 0.905255)
+theme_override_colors/font_color = Color(0.482353, 0.466667, 0.207843, 1)
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 60
+text = "¡Encuentra
+a los animales!"
+
+[node name="ExplicacionVoz" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xirs1")
+volume_db = -10.0
+autoplay = true

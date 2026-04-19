@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwjdw2oy4kaxv"]
+
+[ext_resource type="Script" uid="uid://owvm5lg1nwt8" path="res://minijuego-valentina-tereshkova/valentina.gd" id="1_pfii8"]
+[ext_resource type="Texture2D" uid="uid://divhv0vrhs8bw" path="res://minijuego-valentina-tereshkova/assets/cientifica.png" id="2_pfii8"]
+[ext_resource type="Texture2D" uid="uid://dsf613lxutjrb" path="res://assets/bocadillo.png" id="3_k270g"]
+[ext_resource type="FontFile" uid="uid://bxvuw4qvy4rsd" path="res://Fredoka_Condensed-Bold.ttf" id="4_we0e8"]
+
+[sub_resource type="Animation" id="Animation_copkw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BordeDerecho/SpriteValentina:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BordeDerecho/SpriteValentina:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pfii8"]
+resource_name = "aparecer"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BordeDerecho/SpriteValentina:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [0.139626, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BordeDerecho/SpriteValentina:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(0.5, 1, 1, 1, 1, 2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1200, 0), Vector2(-1200, -15), Vector2(-1200, 15), Vector2(-1200, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_copkw"]
+_data = {
+&"RESET": SubResource("Animation_copkw"),
+&"aparecer": SubResource("Animation_pfii8")
+}
+
+[node name="Valentina" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_pfii8")
+
+[node name="BordeDerecho" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="SpriteValentina" type="TextureRect" parent="BordeDerecho"]
+layout_mode = 1
+offset_right = 1600.0
+offset_bottom = 1092.0
+texture = ExtResource("2_pfii8")
+
+[node name="SpriteBocadillo" type="TextureRect" parent="BordeDerecho/SpriteValentina"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = -66.0
+offset_right = 936.0
+offset_bottom = 446.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_k270g")
+
+[node name="Etiqueta" type="Label" parent="BordeDerecho/SpriteValentina/SpriteBocadillo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -87.25
+offset_right = 149.0
+offset_bottom = -13.25
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.423529, 0.313726, 0.501961, 1)
+theme_override_fonts/font = ExtResource("4_we0e8")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Animador" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_copkw")
+}
+
+[node name="ExplicacionPlaneta" type="AudioStreamPlayer" parent="."]

@@ -1,0 +1,121 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsym0mrmlronc"]
+
+[ext_resource type="Script" uid="uid://blnujmtb2071e" path="res://tutorial.gd" id="1_5dfuu"]
+[ext_resource type="VideoStream" uid="uid://dqnr2c47ki6lb" path="res://minijuego-florence-bascom/videos/videotutorial.ogv" id="1_7n6eb"]
+[ext_resource type="Texture2D" uid="uid://cgkmsyoonqjro" path="res://minijuego-florence-bascom/assets/cientifica.png" id="2_yb1ct"]
+[ext_resource type="FontFile" uid="uid://bxvuw4qvy4rsd" path="res://Fredoka_Condensed-Bold.ttf" id="4_0cr88"]
+[ext_resource type="Texture2D" uid="uid://c122ww7y1bgc7" path="res://minijuego-florence-bascom/assets/BotonPlay.png" id="4_hu44a"]
+[ext_resource type="Texture2D" uid="uid://btvpdgwr8yafe" path="res://minijuego-florence-bascom/assets/BotonPlayPulsado.png" id="5_0cr88"]
+[ext_resource type="Texture2D" uid="uid://dsf613lxutjrb" path="res://assets/bocadillo.png" id="6_5dfuu"]
+[ext_resource type="AudioStream" uid="uid://7rf0n076245l" path="res://minijuego-florence-bascom/sonidos/ExplicacionFlorence.mp3" id="8_a7ao0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgksj"]
+bg_color = Color(0.776655, 0.635621, 0.527327, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+shadow_color = Color(0.654972, 0.512717, 0.402252, 1)
+shadow_size = 100
+
+[node name="Tutorial" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1980.0
+offset_bottom = 1080.0
+script = ExtResource("1_5dfuu")
+
+[node name="Fondo" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 1860.0
+offset_bottom = 990.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgksj")
+
+[node name="NombreCientifica" type="Label" parent="."]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 108.0
+offset_right = 1168.0
+offset_bottom = 242.0
+theme_override_colors/font_color = Color(0.917167, 0.846338, 0.792677, 1)
+theme_override_colors/font_outline_color = Color(0.364015, 0.270516, 0.19622, 1)
+theme_override_constants/shadow_offset_x = 50
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 110
+text = "FLORENCE BASCOM"
+
+[node name="Videotutorial" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 2
+offset_left = 150.0
+offset_top = 270.0
+offset_right = 1110.0
+offset_bottom = 810.0
+size_flags_vertical = 4
+stream = ExtResource("1_7n6eb")
+autoplay = true
+expand = true
+loop = true
+
+[node name="BotonPlay" type="TextureButton" parent="Videotutorial"]
+modulate = Color(0.917647, 0.847059, 0.792157, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -240.0
+offset_right = 256.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(256, 256)
+texture_normal = ExtResource("4_hu44a")
+texture_pressed = ExtResource("5_0cr88")
+
+[node name="Cientifica" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 933.0
+offset_top = 60.0
+offset_right = 2533.0
+offset_bottom = 1152.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_yb1ct")
+
+[node name="Bocadillo" type="TextureRect" parent="Cientifica"]
+layout_mode = 1
+offset_left = 265.556
+offset_top = -17.7778
+offset_right = 777.556
+offset_bottom = 494.222
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_5dfuu")
+
+[node name="Instrucciones" type="Label" parent="Cientifica/Bocadillo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.5
+offset_top = -106.5
+offset_right = 159.5
+offset_bottom = 106.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.364706, 0.270588, 0.196078, 1)
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 60
+text = "¡Encuentra
+las parejas!"
+
+[node name="ExplicacionVoz" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_a7ao0")

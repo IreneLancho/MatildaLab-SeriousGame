@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=3 uid="uid://15m0p8nbne44"]
+
+[ext_resource type="Texture2D" uid="uid://cy2ebu6usjj70" path="res://minijuego-marie-curie/assets/cientifica.png" id="1_ehuit"]
+[ext_resource type="VideoStream" uid="uid://bxjtrmf8tjvv3" path="res://minijuego-marie-curie/videos/videotutorial.ogv" id="1_hu44a"]
+[ext_resource type="Texture2D" uid="uid://c5t17bs6aifki" path="res://minijuego-marie-curie/assets/66 sin título_20260222203050.png" id="1_rwowx"]
+[ext_resource type="Script" uid="uid://c5daacndiafvb" path="res://tutorial.gd" id="1_xkxis"]
+[ext_resource type="Texture2D" uid="uid://dsf613lxutjrb" path="res://assets/bocadillo.png" id="2_5mrt3"]
+[ext_resource type="Texture2D" uid="uid://bq1474hhx3tqd" path="res://minijuego-marie-curie/assets/66 sin título2_20260222203207.png" id="2_hu44a"]
+[ext_resource type="FontFile" uid="uid://bxvuw4qvy4rsd" path="res://Fredoka_Condensed-Bold.ttf" id="4_0cr88"]
+[ext_resource type="AudioStream" uid="uid://ijfqu3buhpw8" path="res://minijuego-marie-curie/sonidos/ExplicacionMarieCurie.mp3" id="8_jjik3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgksj"]
+bg_color = Color(0.441005, 0.746867, 0.535096, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+shadow_color = Color(0.192035, 0.375912, 0.251127, 1)
+shadow_size = 100
+
+[node name="Tutorial" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xkxis")
+
+[node name="Fondo" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 1860.0
+offset_bottom = 990.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgksj")
+
+[node name="NombreCientifica" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1176.0
+offset_top = 106.0
+offset_right = 2139.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0.614508, 0.895673, 0.694202, 1)
+theme_override_colors/font_outline_color = Color(0.118253, 0.249082, 0.160444, 1)
+theme_override_constants/shadow_offset_x = 50
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 110
+text = "MARIE CURIE"
+
+[node name="Videotutorial" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 2
+offset_left = 824.0
+offset_top = 277.0
+offset_right = 1784.0
+offset_bottom = 817.0
+size_flags_vertical = 4
+stream = ExtResource("1_hu44a")
+autoplay = true
+expand = true
+loop = true
+
+[node name="BotonPlay" type="TextureButton" parent="Videotutorial"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -240.0
+offset_right = 256.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(256, 256)
+texture_normal = ExtResource("1_rwowx")
+texture_pressed = ExtResource("2_hu44a")
+
+[node name="Cientifica" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 0.999985
+offset_right = 1816.0
+offset_bottom = 1601.0
+scale = Vector2(-0.8, 0.8)
+texture = ExtResource("1_ehuit")
+
+[node name="Bocadillo" type="TextureRect" parent="Cientifica"]
+layout_mode = 1
+offset_left = -75.0001
+offset_top = 51.25
+offset_right = 437.0
+offset_bottom = 563.25
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_5mrt3")
+
+[node name="Instrucciones" type="Label" parent="Cientifica/Bocadillo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.667
+offset_top = -101.238
+offset_right = 565.667
+offset_bottom = 126.762
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-0.886, 0.9)
+theme_override_colors/font_color = Color(0.117647, 0.25098, 0.160784, 1)
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 60
+text = "¡Echa los botes 
+en orden!"
+
+[node name="ExplicacionVoz" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_jjik3")
+autoplay = true

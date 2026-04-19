@@ -1,0 +1,246 @@
+[gd_scene load_steps=28 format=3 uid="uid://dmylhoys5dd5f"]
+
+[ext_resource type="Script" uid="uid://bfd8k2xieynom" path="res://minijuego-sylvia-earle/main.gd" id="1_074og"]
+[ext_resource type="Script" uid="uid://gfrrhyyh7frj" path="res://minijuego-sylvia-earle/generador_obstaculos.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://coo2ct7oe5siu" path="res://minijuego-sylvia-earle/peces.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://crgl1acea76xw" path="res://minijuego-sylvia-earle/coral.tscn" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://df1phy68oniko" path="res://minijuego-sylvia-earle/fondos.gd" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://ddpr86bx6m5po" path="res://minijuego-sylvia-earle/assets/fondo.png" id="5_w48qg"]
+[ext_resource type="Script" uid="uid://bx4aq7l1jcshl" path="res://minijuego-sylvia-earle/buceadora.gd" id="7_074og"]
+[ext_resource type="Texture2D" uid="uid://cb8bqce6pbaqh" path="res://minijuego-sylvia-earle/assets/flecha.png" id="7_kek77"]
+[ext_resource type="Texture2D" uid="uid://bdcaqj0xyvead" path="res://minijuego-sylvia-earle/assets/flechapresionada.png" id="8_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dc4xyaobyd71n" path="res://minijuego-sylvia-earle/assets/cientifica.png" id="8_074og"]
+[ext_resource type="Script" uid="uid://b11ihhjhkvlh2" path="res://minijuego-sylvia-earle/canvas_layer.gd" id="8_w48qg"]
+[ext_resource type="AudioStream" uid="uid://danoqguown5cw" path="res://minijuego-sylvia-earle/assets/universfield-wet-impact-352440.mp3" id="9_82xsv"]
+[ext_resource type="Texture2D" uid="uid://dxnc127kobqbe" path="res://minijuego-sylvia-earle/assets/flechaabajo.png" id="9_efxa6"]
+[ext_resource type="Texture2D" uid="uid://cq4s0acanfo2d" path="res://minijuego-sylvia-earle/assets/flechapresionadaabajo.png" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://sxxmyp2bn7cr" path="res://minijuego-sylvia-earle/assets/flechadeshabilitada.png" id="11_w48qg"]
+[ext_resource type="Texture2D" uid="uid://c5cu5pxft1fmm" path="res://minijuego-sylvia-earle/assets/flechadeshabilitadaabajo.png" id="14_vivmo"]
+[ext_resource type="Script" uid="uid://dc660bp675e55" path="res://minijuego-sylvia-earle/vidas.gd" id="15_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://cow5hqpdamqyp" path="res://minijuego-sylvia-earle/assets/vida.png" id="15_vivmo"]
+[ext_resource type="Texture2D" uid="uid://c4bidm873r711" path="res://minijuego-sylvia-earle/assets/vidaperdida.png" id="17_yaehf"]
+[ext_resource type="AudioStream" uid="uid://bdrheucwsx0r0" path="res://minijuego-sylvia-earle/sonidos/hitslab-kids-happy-music-320636.mp3" id="19_cegan"]
+[ext_resource type="PackedScene" uid="uid://8xneqa8ordcw" path="res://minijuego-sylvia-earle/tutorial.tscn" id="21_getpj"]
+[ext_resource type="Texture2D" uid="uid://cy4lli4w6o4d1" path="res://assets/botonAyuda.png" id="22_8wb0w"]
+[ext_resource type="Texture2D" uid="uid://m5amf8nbk8fi" path="res://assets/botonAyudaPresionado.png" id="23_f2ivj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
+size = Vector2(440, 139)
+
+[sub_resource type="Animation" id="Animation_cegan"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_074og"]
+resource_name = "rebote"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.15, 1.15), Vector2(1.15, 1.15), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Choque")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_82xsv"]
+_data = {
+&"RESET": SubResource("Animation_cegan"),
+&"rebote": SubResource("Animation_074og")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_074og")
+
+[node name="Fondos" type="Node2D" parent="."]
+script = ExtResource("4_1bvp3")
+
+[node name="Fondo1" type="Sprite2D" parent="Fondos"]
+z_index = -5
+texture_filter = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_w48qg")
+centered = false
+
+[node name="Fondo2" type="Sprite2D" parent="Fondos"]
+z_index = -5
+texture_filter = 2
+position = Vector2(1918, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_w48qg")
+centered = false
+flip_h = true
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_cegan")
+volume_db = -40.0
+parameters/looping = true
+
+[node name="Minijuego" type="Node2D" parent="."]
+
+[node name="GeneradorObstaculos" type="Node2D" parent="Minijuego" node_paths=PackedStringArray("buceadora")]
+script = ExtResource("1_ig7tw")
+obstaculos = Array[PackedScene]([ExtResource("2_h2yge"), ExtResource("3_1bvp3")])
+buceadora = NodePath("../Buceadora")
+
+[node name="TemporizadorObstaculo" type="Timer" parent="Minijuego/GeneradorObstaculos"]
+
+[node name="Buceadora" type="CharacterBody2D" parent="Minijuego"]
+position = Vector2(250, 500)
+collision_mask = 2
+script = ExtResource("7_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minijuego/Buceadora"]
+position = Vector2(4, 6)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Minijuego/Buceadora"]
+rotation = 0.47822
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_074og")
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Buceadora"]
+libraries = {
+&"": SubResource("AnimationLibrary_82xsv")
+}
+
+[node name="Choque" type="AudioStreamPlayer" parent="Minijuego/Buceadora"]
+stream = ExtResource("9_82xsv")
+volume_db = -20.0
+
+[node name="TemporizadorVictoria" type="Timer" parent="Minijuego"]
+wait_time = 40.0
+
+[node name="Interfaz" type="Node" parent="Minijuego"]
+
+[node name="InterfazMinijuego" type="CanvasLayer" parent="Minijuego/Interfaz"]
+layer = 0
+script = ExtResource("8_w48qg")
+
+[node name="FlechaArriba" type="TextureButton" parent="Minijuego/Interfaz/InterfazMinijuego"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -476.0
+offset_top = -383.0
+offset_right = 36.0
+offset_bottom = 129.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("7_kek77")
+texture_pressed = ExtResource("8_4c57u")
+texture_disabled = ExtResource("11_w48qg")
+
+[node name="FlechaAbajo" type="TextureButton" parent="Minijuego/Interfaz/InterfazMinijuego"]
+offset_left = 1628.0
+offset_top = 707.0
+offset_right = 2140.0
+offset_bottom = 1219.0
+scale = Vector2(0.74, 0.74)
+texture_normal = ExtResource("9_efxa6")
+texture_pressed = ExtResource("11_dg77c")
+texture_disabled = ExtResource("14_vivmo")
+
+[node name="Vidas" type="HBoxContainer" parent="Minijuego/Interfaz/InterfazMinijuego"]
+offset_right = 1544.0
+offset_bottom = 512.0
+scale = Vector2(0.25, 0.25)
+script = ExtResource("15_2cqfq")
+vida_perdida = ExtResource("17_yaehf")
+
+[node name="Vida1" type="TextureRect" parent="Minijuego/Interfaz/InterfazMinijuego/Vidas"]
+layout_mode = 2
+texture = ExtResource("15_vivmo")
+
+[node name="Vida2" type="TextureRect" parent="Minijuego/Interfaz/InterfazMinijuego/Vidas"]
+layout_mode = 2
+texture = ExtResource("15_vivmo")
+
+[node name="Vida3" type="TextureRect" parent="Minijuego/Interfaz/InterfazMinijuego/Vidas"]
+layout_mode = 2
+texture = ExtResource("15_vivmo")
+
+[node name="BotonAyuda" type="TextureButton" parent="Minijuego/Interfaz/InterfazMinijuego"]
+offset_left = 1715.2
+offset_top = 50.0
+offset_right = 2227.2
+offset_bottom = 562.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("22_8wb0w")
+texture_pressed = ExtResource("23_f2ivj")
+
+[node name="TutorialLayer" type="CanvasLayer" parent="Minijuego/Interfaz"]
+
+[node name="Tutorial" parent="Minijuego/Interfaz/TutorialLayer" instance=ExtResource("21_getpj")]
+z_index = 100
+
+[connection signal="timeout" from="Minijuego/GeneradorObstaculos/TemporizadorObstaculo" to="Minijuego/GeneradorObstaculos" method="_on_timer_timeout"]
+[connection signal="carril_cambiado" from="Minijuego/Buceadora" to="Minijuego/Interfaz/InterfazMinijuego" method="_on_buceadora_carril_cambiado"]
+[connection signal="perder_vida" from="Minijuego/Buceadora" to="." method="_on_buceadora_perder_vida"]
+[connection signal="perder_vida" from="Minijuego/Buceadora" to="Minijuego/Interfaz/InterfazMinijuego/Vidas" method="_on_buceadora_perder_vida"]
+[connection signal="animation_finished" from="Minijuego/Buceadora/Animador" to="Minijuego/Buceadora" method="_on_animacion_terminada"]
+[connection signal="timeout" from="Minijuego/TemporizadorVictoria" to="." method="_on_temporizador_victoria_timeout"]
+[connection signal="pressed" from="Minijuego/Interfaz/InterfazMinijuego/FlechaArriba" to="Minijuego/Buceadora" method="_on_flecha_arriba_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/InterfazMinijuego/FlechaArriba" to="Minijuego/Interfaz/InterfazMinijuego" method="_on_flecha_arriba_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/InterfazMinijuego/FlechaAbajo" to="Minijuego/Buceadora" method="_on_flecha_abajo_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/InterfazMinijuego/BotonAyuda" to="." method="_on_boton_ayuda_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/InterfazMinijuego/BotonAyuda" to="Minijuego/Interfaz/TutorialLayer/Tutorial" method="_on_boton_ayuda_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/TutorialLayer/Tutorial/Videotutorial/BotonPlay" to="." method="iniciar_juego"]
+[connection signal="pressed" from="Minijuego/Interfaz/TutorialLayer/Tutorial/Videotutorial/BotonPlay" to="Minijuego/Interfaz/TutorialLayer/Tutorial" method="_on_boton_play_pressed"]
+
+[editable path="Minijuego/Interfaz/TutorialLayer/Tutorial"]

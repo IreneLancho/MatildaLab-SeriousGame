@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://21wljow2q1ll"]
+
+[ext_resource type="Script" uid="uid://blnujmtb2071e" path="res://tutorial.gd" id="1_0cr88"]
+[ext_resource type="VideoStream" uid="uid://dte4whpphweq3" path="res://minijuego-valentina-tereshkova/videos/videotutorial.ogv" id="1_7n6eb"]
+[ext_resource type="Texture2D" uid="uid://lhqkw2ttbiyc" path="res://minijuego-valentina-tereshkova/assets/botonPlay.png" id="3_0cr88"]
+[ext_resource type="Texture2D" uid="uid://divhv0vrhs8bw" path="res://minijuego-valentina-tereshkova/assets/cientifica.png" id="3_rwowx"]
+[ext_resource type="FontFile" uid="uid://bxvuw4qvy4rsd" path="res://Fredoka_Condensed-Bold.ttf" id="4_0cr88"]
+[ext_resource type="Texture2D" uid="uid://dwlwngt2rtmy6" path="res://minijuego-valentina-tereshkova/assets/botonPlayPresionado.png" id="4_4t6hg"]
+[ext_resource type="Texture2D" uid="uid://dsf613lxutjrb" path="res://assets/bocadillo.png" id="6_w3its"]
+[ext_resource type="AudioStream" uid="uid://iygvnur5gtx6" path="res://minijuego-valentina-tereshkova/sonidos/ExplicacionValentina.mp3" id="8_iwgdo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgksj"]
+bg_color = Color(0.724591, 0.617694, 0.805155, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+shadow_color = Color(0.655435, 0.397487, 0.90076, 1)
+shadow_size = 100
+
+[node name="Tutorial" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0cr88")
+
+[node name="Fondo" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 1860.0
+offset_bottom = 990.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgksj")
+
+[node name="NombreCientifica" type="Label" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 108.0
+offset_right = 1245.0
+offset_bottom = 242.0
+theme_override_colors/font_color = Color(0.834594, 0.765984, 0.88732, 1)
+theme_override_colors/font_outline_color = Color(0.424525, 0.313018, 0.502282, 1)
+theme_override_constants/shadow_offset_x = 50
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 110
+text = "VALENTINA TERESHKOVA"
+
+[node name="Videotutorial" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 2
+offset_left = 150.0
+offset_top = 270.0
+offset_right = 1110.0
+offset_bottom = 810.0
+size_flags_vertical = 4
+mouse_filter = 2
+stream = ExtResource("1_7n6eb")
+autoplay = true
+expand = true
+loop = true
+
+[node name="BotonPlay" type="TextureButton" parent="Videotutorial"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -240.0
+offset_right = 256.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(256, 256)
+texture_normal = ExtResource("3_0cr88")
+texture_pressed = ExtResource("4_4t6hg")
+
+[node name="Cientifica" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 108.0
+offset_right = 2454.0
+offset_bottom = 1200.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_rwowx")
+
+[node name="Bocadillo" type="TextureRect" parent="Cientifica"]
+layout_mode = 0
+offset_left = 501.25
+offset_top = -51.25
+offset_right = 1013.25
+offset_bottom = 460.75
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_w3its")
+
+[node name="Instrucciones" type="Label" parent="Cientifica/Bocadillo"]
+layout_mode = 0
+offset_left = 130.357
+offset_top = 144.643
+offset_right = 429.357
+offset_bottom = 357.643
+theme_override_colors/font_color = Color(0.423529, 0.313726, 0.501961, 1)
+theme_override_fonts/font = ExtResource("4_0cr88")
+theme_override_font_sizes/font_size = 60
+text = "¡Busca los
+planetas!"
+
+[node name="ExplicacionVoz" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_iwgdo")
+autoplay = true

@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=3 uid="uid://d78rxhadrt74"]
+
+[ext_resource type="Script" uid="uid://utpojwtk1a8m" path="res://minijuego-mary-agnes-chase/flor.gd" id="1_ef1ys"]
+[ext_resource type="AudioStream" uid="uid://cvilbqkl0oke6" path="res://sonidos/dragon-studio-correct-472358.mp3" id="2_ri2v6"]
+[ext_resource type="AudioStream" uid="uid://wurbcygt0sk0" path="res://sonidos/universfield-error-010-206498.mp3" id="3_x5w6a"]
+
+[sub_resource type="Animation" id="Animation_x5w6a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
+
+[sub_resource type="Animation" id="Animation_ri2v6"]
+resource_name = "acierto"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.8, 0.8), Vector2(0.4, 0.4), Vector2(0.8, 0.8), Vector2(0.4, 0.4)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sonidos/Acierto")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x5w6a"]
+_data = {
+&"RESET": SubResource("Animation_x5w6a"),
+&"acierto": SubResource("Animation_ri2v6")
+}
+
+[node name="Flor" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+mouse_filter = 2
+script = ExtResource("1_ef1ys")
+
+[node name="Petalos" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Centro" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tallo" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Boceto" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Animador" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_x5w6a")
+}
+
+[node name="Sonidos" type="Node" parent="."]
+
+[node name="Acierto" type="AudioStreamPlayer" parent="Sonidos"]
+stream = ExtResource("2_ri2v6")
+volume_db = -20.0
+pitch_scale = 1.5
+
+[node name="Fallo" type="AudioStreamPlayer" parent="Sonidos"]
+stream = ExtResource("3_x5w6a")
+volume_db = -20.0
+pitch_scale = 1.5
+
+[connection signal="pressed" from="Petalos" to="." method="on_button_pressed" binds= ["Petalos"]]
+[connection signal="pressed" from="Centro" to="." method="on_button_pressed" binds= ["Centro"]]
+[connection signal="pressed" from="Tallo" to="." method="on_button_pressed" binds= ["Tallo"]]

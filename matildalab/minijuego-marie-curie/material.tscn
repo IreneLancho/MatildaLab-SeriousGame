@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbi0dy6vgevf3"]
+
+[ext_resource type="Script" uid="uid://0qx3q6au2jgq" path="res://minijuego-marie-curie/material.gd" id="1_iyans"]
+[ext_resource type="Texture2D" uid="uid://qig7nxiuveli" path="res://minijuego-marie-curie/assets/matraz balón.png" id="2_iyans"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e00jd"]
+radius = 32.0
+height = 292.0
+
+[node name="Material" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_iyans")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_iyans")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 20)
+shape = SubResource("CapsuleShape2D_e00jd")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

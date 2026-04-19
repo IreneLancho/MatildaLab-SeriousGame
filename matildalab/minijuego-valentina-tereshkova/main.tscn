@@ -1,0 +1,552 @@
+[gd_scene load_steps=40 format=3 uid="uid://cxlqygw4k0nm5"]
+
+[ext_resource type="Script" uid="uid://devwodratddc8" path="res://minijuego-valentina-tereshkova/main.gd" id="1_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://bto3apcme74g8" path="res://minijuego-valentina-tereshkova/assets/fondo3.jpg" id="2_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://bbjnagw58gosc" path="res://minijuego-valentina-tereshkova/assets/fondo2.jpg" id="3_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://bwwpp1k2547w" path="res://minijuego-valentina-tereshkova/assets/fondo4.jpg" id="5_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://d1ehi7irb4nj5" path="res://minijuego-valentina-tereshkova/assets/fondo5.jpg" id="5_w4l3b"]
+[ext_resource type="Texture2D" uid="uid://ck34o2tufk1ly" path="res://minijuego-valentina-tereshkova/assets/mercurio.png" id="8_05ukr"]
+[ext_resource type="Texture2D" uid="uid://dh2ufeygig6y6" path="res://minijuego-valentina-tereshkova/assets/venus.png" id="11_074og"]
+[ext_resource type="PackedScene" uid="uid://dte4txksf37fr" path="res://minijuego-valentina-tereshkova/planeta.tscn" id="11_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://doujxe5hwi5g5" path="res://minijuego-valentina-tereshkova/assets/tierra.png" id="12_cegan"]
+[ext_resource type="Texture2D" uid="uid://b7uc1go83sdha" path="res://minijuego-valentina-tereshkova/assets/jupiter.png" id="12_ssh27"]
+[ext_resource type="Texture2D" uid="uid://dbkopprwxr6rh" path="res://minijuego-valentina-tereshkova/assets/saturno.png" id="13_05ukr"]
+[ext_resource type="Texture2D" uid="uid://blem082gblp5i" path="res://minijuego-valentina-tereshkova/assets/marte.png" id="13_82xsv"]
+[ext_resource type="Texture2D" uid="uid://chch8xhqe6uol" path="res://minijuego-valentina-tereshkova/assets/sol.png" id="14_1rci5"]
+[ext_resource type="Texture2D" uid="uid://cfnbq1x6sxce5" path="res://minijuego-valentina-tereshkova/assets/urano.png" id="14_05ukr"]
+[ext_resource type="Texture2D" uid="uid://cg585tmu0arvq" path="res://minijuego-valentina-tereshkova/assets/luna.png" id="15_c83qf"]
+[ext_resource type="Texture2D" uid="uid://dmvoorm3i8ql1" path="res://minijuego-valentina-tereshkova/assets/satelite.png" id="16_dvo45"]
+[ext_resource type="Texture2D" uid="uid://cxkw82c8w8r50" path="res://minijuego-valentina-tereshkova/assets/neptuno.png" id="17_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://din88jcv3fnkw" path="res://minijuego-valentina-tereshkova/assets/asteroide.png" id="17_ef773"]
+[ext_resource type="Texture2D" uid="uid://coigi5lf8ymxo" path="res://minijuego-valentina-tereshkova/assets/cometa.png" id="18_60e5y"]
+[ext_resource type="Texture2D" uid="uid://bxhjavenfrbb4" path="res://minijuego-valentina-tereshkova/assets/efectocamara.png" id="18_074og"]
+[ext_resource type="Script" uid="uid://ctgw3epy50pym" path="res://minijuego-valentina-tereshkova/flechas.gd" id="19_cegan"]
+[ext_resource type="Texture2D" uid="uid://b3n8q11jhebm3" path="res://minijuego-valentina-tereshkova/assets/flecha.png" id="20_ryguw"]
+[ext_resource type="Texture2D" uid="uid://ct360jlas2hm4" path="res://minijuego-valentina-tereshkova/assets/flechapresionada.png" id="21_d13ii"]
+[ext_resource type="Texture2D" uid="uid://6aojame32a2o" path="res://minijuego-valentina-tereshkova/assets/flechadeshabilitada.png" id="22_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://56m72gx065p" path="res://minijuego-valentina-tereshkova/assets/flechaabajo.png" id="23_0odxb"]
+[ext_resource type="Texture2D" uid="uid://cvc35bi1emx11" path="res://minijuego-valentina-tereshkova/assets/flechapresionadaabajo.png" id="24_lswn8"]
+[ext_resource type="Texture2D" uid="uid://gmf5oekarab1" path="res://minijuego-valentina-tereshkova/assets/flechadeshabilitadaabajo.png" id="25_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://bohw5wyv55mv1" path="res://minijuego-valentina-tereshkova/assets/flechaizq.png" id="26_seu75"]
+[ext_resource type="Texture2D" uid="uid://dttbtbnv54twl" path="res://minijuego-valentina-tereshkova/assets/flechapresionadaizq.png" id="27_htxhm"]
+[ext_resource type="Texture2D" uid="uid://7a8ugpto62wt" path="res://minijuego-valentina-tereshkova/assets/flechadeshabilitadaizq.png" id="28_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://1vnblr28mdnx" path="res://minijuego-valentina-tereshkova/assets/flechader.png" id="29_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://ctb1rmxn64j4y" path="res://minijuego-valentina-tereshkova/assets/flechapresionadader.png" id="30_0rl1p"]
+[ext_resource type="Texture2D" uid="uid://8jspqibrlu38" path="res://minijuego-valentina-tereshkova/assets/flechadeshabilitadader.png" id="31_ok6jj"]
+[ext_resource type="Texture2D" uid="uid://ys45he5yv4ei" path="res://minijuego-valentina-tereshkova/assets/buscarplaneta.png" id="32_htxhm"]
+[ext_resource type="AudioStream" uid="uid://chkuh38ukcab8" path="res://minijuego-valentina-tereshkova/sonidos/hitslab-kids-happy-background-music-354662.mp3" id="34_4k2k6"]
+[ext_resource type="PackedScene" uid="uid://21wljow2q1ll" path="res://minijuego-valentina-tereshkova/tutorial.tscn" id="35_0rl1p"]
+[ext_resource type="Texture2D" uid="uid://cy4lli4w6o4d1" path="res://assets/botonAyuda.png" id="37_ssh27"]
+[ext_resource type="Texture2D" uid="uid://m5amf8nbk8fi" path="res://assets/botonAyudaPresionado.png" id="38_05ukr"]
+[ext_resource type="PackedScene" uid="uid://cwjdw2oy4kaxv" path="res://minijuego-valentina-tereshkova/valentina.tscn" id="38_ssh27"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jq2sk")
+
+[node name="Fondos" type="Control" parent="."]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="Fondo1" type="TextureRect" parent="Fondos"]
+z_index = -1
+layout_mode = 0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+mouse_filter = 2
+texture = ExtResource("2_qsp4k")
+
+[node name="Fondo2" type="TextureRect" parent="Fondos"]
+z_index = -1
+layout_mode = 0
+offset_top = -1080.0
+offset_bottom = -1080.0
+mouse_filter = 2
+texture = ExtResource("3_jq2sk")
+
+[node name="Fondo3" type="TextureRect" parent="Fondos"]
+z_index = -1
+layout_mode = 0
+offset_left = 1920.0
+offset_top = -1080.0
+offset_right = 1920.0
+offset_bottom = -1080.0
+mouse_filter = 2
+texture = ExtResource("2_qsp4k")
+
+[node name="Fondo4" type="TextureRect" parent="Fondos"]
+z_index = -1
+layout_mode = 0
+offset_left = -1920.0
+offset_right = -1920.0
+mouse_filter = 2
+texture = ExtResource("5_4k2k6")
+
+[node name="Fondo5" type="TextureRect" parent="Fondos"]
+z_index = -1
+layout_mode = 0
+mouse_filter = 2
+texture = ExtResource("5_w4l3b")
+
+[node name="Fondo6" type="TextureRect" parent="Fondos"]
+z_index = -1
+layout_mode = 0
+offset_left = 1920.0
+offset_right = 1920.0
+mouse_filter = 2
+texture = ExtResource("5_4k2k6")
+
+[node name="Fondo7" type="TextureRect" parent="Fondos"]
+z_index = -1
+layout_mode = 0
+offset_left = -1920.0
+offset_top = 1080.0
+offset_right = -1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("2_qsp4k")
+
+[node name="Fondo8" type="TextureRect" parent="Fondos"]
+z_index = -1
+layout_mode = 0
+offset_top = 1080.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("3_jq2sk")
+
+[node name="Fondo9" type="TextureRect" parent="Fondos"]
+z_index = -1
+layout_mode = 0
+offset_left = 1920.0
+offset_top = 1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("2_qsp4k")
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_4k2k6")
+volume_db = -30.0
+parameters/looping = true
+
+[node name="Minijuego" type="Node2D" parent="."]
+
+[node name="Espacio" type="Node2D" parent="Minijuego"]
+
+[node name="Planetas" type="Control" parent="Minijuego/Espacio"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = 3840.0
+offset_bottom = 2160.0
+mouse_filter = 2
+
+[node name="Mercurio" parent="Minijuego/Espacio/Planetas" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 2689.2
+offset_right = 916.0
+offset_bottom = 3201.2
+scale = Vector2(0.5, 0.5)
+nombre_planeta = "Mercurio"
+
+[node name="Boton" parent="Minijuego/Espacio/Planetas/Mercurio" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("8_05ukr")
+
+[node name="Venus" parent="Minijuego/Espacio/Planetas" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 819.0
+offset_top = 1526.2
+offset_right = 1331.0
+offset_bottom = 2038.2
+scale = Vector2(0.7, 0.7)
+nombre_planeta = "Venus"
+
+[node name="Boton" parent="Minijuego/Espacio/Planetas/Venus" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("11_074og")
+
+[node name="Tierra" parent="Minijuego/Espacio/Planetas" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 921.0
+offset_top = 480.2
+offset_right = 1433.0
+offset_bottom = 992.2
+scale = Vector2(0.8, 0.8)
+nombre_planeta = "la Tierra"
+
+[node name="Boton" parent="Minijuego/Espacio/Planetas/Tierra" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("12_cegan")
+
+[node name="Marte" parent="Minijuego/Espacio/Planetas" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 2274.0
+offset_top = 84.1999
+offset_right = 2786.0
+offset_bottom = 596.2
+scale = Vector2(0.7, 0.7)
+nombre_planeta = "Marte"
+
+[node name="Boton" parent="Minijuego/Espacio/Planetas/Marte" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("13_82xsv")
+
+[node name="Jupiter" parent="Minijuego/Espacio/Planetas" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 3115.0
+offset_top = 2682.2
+offset_right = 3627.0
+offset_bottom = 3194.2
+nombre_planeta = "Júpiter"
+
+[node name="Boton" parent="Minijuego/Espacio/Planetas/Jupiter" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("12_ssh27")
+
+[node name="Saturno" parent="Minijuego/Espacio/Planetas" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 4578.0
+offset_top = 2742.2
+offset_right = 5090.0
+offset_bottom = 3254.2
+scale = Vector2(1.2, 1.2)
+nombre_planeta = "Saturno"
+
+[node name="Boton" parent="Minijuego/Espacio/Planetas/Saturno" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("13_05ukr")
+
+[node name="Urano" parent="Minijuego/Espacio/Planetas" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 5129.0
+offset_top = 1623.2
+offset_right = 5641.0
+offset_bottom = 2135.2
+scale = Vector2(0.6, 0.6)
+nombre_planeta = "Urano"
+
+[node name="Boton" parent="Minijuego/Espacio/Planetas/Urano" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("14_05ukr")
+
+[node name="Neptuno" parent="Minijuego/Espacio/Planetas" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 5342.0
+offset_top = 588.2
+offset_right = 5854.0
+offset_bottom = 1100.2
+scale = Vector2(0.5, 0.5)
+nombre_planeta = "Neptuno"
+
+[node name="Boton" parent="Minijuego/Espacio/Planetas/Neptuno" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+
+[node name="Relleno" type="Control" parent="Minijuego/Espacio"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = 3840.0
+offset_bottom = 2160.0
+mouse_filter = 2
+
+[node name="Sol" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 1293.93
+offset_right = 729.0
+offset_bottom = 1805.93
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Sol" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("14_1rci5")
+
+[node name="Luna" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 1171.0
+offset_top = 269.934
+offset_right = 1683.0
+offset_bottom = 781.934
+scale = Vector2(0.4, 0.4)
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Luna" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("15_c83qf")
+
+[node name="Satelite1" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 3128.0
+offset_top = 1748.93
+offset_right = 3640.0
+offset_bottom = 2260.93
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Satelite1" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("16_dvo45")
+
+[node name="Satelite2" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 4538.0
+offset_top = 331.934
+offset_right = 5050.0
+offset_bottom = 843.934
+rotation = -0.380482
+scale = Vector2(0.7, 0.7)
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Satelite2" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("16_dvo45")
+
+[node name="Satelite3" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 2137.93
+offset_right = 870.0
+offset_bottom = 2649.93
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Satelite3" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("16_dvo45")
+
+[node name="Asteroide1" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 5214.0
+offset_top = 2268.93
+offset_right = 5726.0
+offset_bottom = 2780.93
+scale = Vector2(0.7, 0.7)
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Asteroide1" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("17_ef773")
+
+[node name="Asteroide2" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 3329.0
+offset_top = 332.934
+offset_right = 3841.0
+offset_bottom = 844.934
+scale = Vector2(0.5, 0.5)
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Asteroide2" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("17_ef773")
+
+[node name="Asteroide3" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 2130.0
+offset_top = 1726.93
+offset_right = 2642.0
+offset_bottom = 2238.93
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Asteroide3" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("17_ef773")
+
+[node name="Cometa1" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 2160.0
+offset_top = 2371.93
+offset_right = 2672.0
+offset_bottom = 2883.93
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Cometa1" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("18_60e5y")
+
+[node name="Cometa2" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 4435.0
+offset_top = 1709.93
+offset_right = 4947.0
+offset_bottom = 2221.93
+rotation = 1.52367
+scale = Vector2(0.6, 0.6)
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Cometa2" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("18_60e5y")
+
+[node name="Cometa3" parent="Minijuego/Espacio/Relleno" instance=ExtResource("11_jq2sk")]
+layout_mode = 0
+offset_left = 1196.0
+offset_top = 2730.93
+offset_right = 1708.0
+offset_bottom = 3242.93
+rotation = 0.6353
+scale = Vector2(0.4, 0.4)
+
+[node name="Boton" parent="Minijuego/Espacio/Relleno/Cometa3" index="0"]
+offset_left = -10.0
+offset_right = 502.0
+texture_normal = ExtResource("18_60e5y")
+
+[node name="Camara" type="Camera2D" parent="Minijuego/Espacio"]
+anchor_mode = 0
+limit_left = -1920
+limit_top = -1080
+limit_right = 3840
+limit_bottom = 2160
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+
+[node name="Interfaz" type="Node" parent="Minijuego"]
+
+[node name="InterfazMinijuego" type="CanvasLayer" parent="Minijuego/Interfaz"]
+
+[node name="EfectoCamara" type="TextureRect" parent="Minijuego/Interfaz/InterfazMinijuego"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("18_074og")
+
+[node name="Flechas" type="Control" parent="Minijuego/Interfaz/InterfazMinijuego"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1587.0
+offset_top = 737.0
+offset_right = 1587.0
+offset_bottom = 737.0
+script = ExtResource("19_cegan")
+
+[node name="FlechaArriba" type="TextureButton" parent="Minijuego/Interfaz/InterfazMinijuego/Flechas"]
+layout_mode = 0
+offset_top = -100.0
+offset_right = 512.0
+offset_bottom = 412.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("20_ryguw")
+texture_pressed = ExtResource("21_d13ii")
+texture_disabled = ExtResource("22_1u8w0")
+
+[node name="FlechaAbajo" type="TextureButton" parent="Minijuego/Interfaz/InterfazMinijuego/Flechas"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 512.0
+offset_bottom = 612.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("23_0odxb")
+texture_pressed = ExtResource("24_lswn8")
+texture_disabled = ExtResource("25_a6jrf")
+
+[node name="FlechaIzquierda" type="TextureButton" parent="Minijuego/Interfaz/InterfazMinijuego/Flechas"]
+layout_mode = 0
+offset_left = -100.0
+offset_right = 412.0
+offset_bottom = 512.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("26_seu75")
+texture_pressed = ExtResource("27_htxhm")
+texture_disabled = ExtResource("28_jq2sk")
+
+[node name="FlechaDerecha" type="TextureButton" parent="Minijuego/Interfaz/InterfazMinijuego/Flechas"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 612.0
+offset_bottom = 512.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("29_4k2k6")
+texture_pressed = ExtResource("30_0rl1p")
+texture_disabled = ExtResource("31_ok6jj")
+
+[node name="CenterContainer" type="CenterContainer" parent="Minijuego/Interfaz/InterfazMinijuego"]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 562.0
+offset_bottom = 562.0
+mouse_filter = 2
+
+[node name="PlanetaObjetivo" type="TextureRect" parent="Minijuego/Interfaz/InterfazMinijuego/CenterContainer"]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("32_htxhm")
+metadata/_edit_use_anchors_ = true
+
+[node name="Planeta" type="TextureRect" parent="Minijuego/Interfaz/InterfazMinijuego/CenterContainer"]
+custom_minimum_size = Vector2(204.8, 204.8)
+layout_mode = 2
+texture = ExtResource("17_1u8w0")
+expand_mode = 1
+
+[node name="BotonAyuda" type="TextureButton" parent="Minijuego/Interfaz/InterfazMinijuego"]
+offset_left = 1690.0
+offset_top = 50.0
+offset_right = 2202.0
+offset_bottom = 562.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("37_ssh27")
+texture_pressed = ExtResource("38_05ukr")
+
+[node name="Valentina" parent="Minijuego/Interfaz" instance=ExtResource("38_ssh27")]
+
+[node name="TutorialLayer" type="CanvasLayer" parent="Minijuego/Interfaz"]
+
+[node name="Tutorial" parent="Minijuego/Interfaz/TutorialLayer" instance=ExtResource("35_0rl1p")]
+
+[node name="Fondo" parent="Minijuego/Interfaz/TutorialLayer/Tutorial" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Instrucciones" parent="Minijuego/Interfaz/TutorialLayer/Tutorial/Cientifica/Bocadillo" index="0"]
+offset_left = 139.286
+offset_top = 148.214
+offset_right = 438.286
+offset_bottom = 361.214
+
+[connection signal="button_down" from="Minijuego/Interfaz/InterfazMinijuego/Flechas/FlechaArriba" to="." method="_on_flecha_arriba_button_down"]
+[connection signal="button_up" from="Minijuego/Interfaz/InterfazMinijuego/Flechas/FlechaArriba" to="." method="_on_flecha_arriba_button_up"]
+[connection signal="button_down" from="Minijuego/Interfaz/InterfazMinijuego/Flechas/FlechaAbajo" to="." method="_on_flecha_abajo_button_down"]
+[connection signal="button_up" from="Minijuego/Interfaz/InterfazMinijuego/Flechas/FlechaAbajo" to="." method="_on_flecha_abajo_button_up"]
+[connection signal="button_down" from="Minijuego/Interfaz/InterfazMinijuego/Flechas/FlechaIzquierda" to="." method="_on_flecha_izq_button_down"]
+[connection signal="button_up" from="Minijuego/Interfaz/InterfazMinijuego/Flechas/FlechaIzquierda" to="." method="_on_flecha_izq_button_up"]
+[connection signal="button_down" from="Minijuego/Interfaz/InterfazMinijuego/Flechas/FlechaDerecha" to="." method="_on_flecha_der_button_down"]
+[connection signal="button_up" from="Minijuego/Interfaz/InterfazMinijuego/Flechas/FlechaDerecha" to="." method="_on_flecha_der_button_up"]
+[connection signal="pressed" from="Minijuego/Interfaz/InterfazMinijuego/BotonAyuda" to="." method="_on_boton_ayuda_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/InterfazMinijuego/BotonAyuda" to="Minijuego/Interfaz/TutorialLayer/Tutorial" method="_on_boton_ayuda_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/TutorialLayer/Tutorial/Videotutorial/BotonPlay" to="." method="iniciar_juego"]
+[connection signal="pressed" from="Minijuego/Interfaz/TutorialLayer/Tutorial/Videotutorial/BotonPlay" to="Minijuego/Interfaz/TutorialLayer/Tutorial" method="_on_boton_play_pressed"]
+
+[editable path="Minijuego/Espacio/Planetas/Mercurio"]
+[editable path="Minijuego/Espacio/Planetas/Venus"]
+[editable path="Minijuego/Espacio/Planetas/Tierra"]
+[editable path="Minijuego/Espacio/Planetas/Marte"]
+[editable path="Minijuego/Espacio/Planetas/Jupiter"]
+[editable path="Minijuego/Espacio/Planetas/Saturno"]
+[editable path="Minijuego/Espacio/Planetas/Urano"]
+[editable path="Minijuego/Espacio/Planetas/Neptuno"]
+[editable path="Minijuego/Espacio/Relleno/Sol"]
+[editable path="Minijuego/Espacio/Relleno/Luna"]
+[editable path="Minijuego/Espacio/Relleno/Satelite1"]
+[editable path="Minijuego/Espacio/Relleno/Satelite2"]
+[editable path="Minijuego/Espacio/Relleno/Satelite3"]
+[editable path="Minijuego/Espacio/Relleno/Asteroide1"]
+[editable path="Minijuego/Espacio/Relleno/Asteroide2"]
+[editable path="Minijuego/Espacio/Relleno/Asteroide3"]
+[editable path="Minijuego/Espacio/Relleno/Cometa1"]
+[editable path="Minijuego/Espacio/Relleno/Cometa2"]
+[editable path="Minijuego/Espacio/Relleno/Cometa3"]
+[editable path="Minijuego/Interfaz/TutorialLayer/Tutorial"]

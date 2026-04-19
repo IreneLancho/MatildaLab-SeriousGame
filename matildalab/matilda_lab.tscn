@@ -1,0 +1,177 @@
+[gd_scene load_steps=11 format=3 uid="uid://bv8522i3rrqtj"]
+
+[ext_resource type="Script" uid="uid://dxh2kdjfaympl" path="res://matilda_lab.gd" id="1_wg4ci"]
+[ext_resource type="Texture2D" uid="uid://b1vf4wevwnbn2" path="res://assets/portada.jpg" id="2_2pt4b"]
+[ext_resource type="Texture2D" uid="uid://c5joo1xg2xw4c" path="res://assets/fin.jpg" id="4_tsv6s"]
+[ext_resource type="Texture2D" uid="uid://dm6mmbeup2vt" path="res://assets/botonCerrar.png" id="5_1wudq"]
+[ext_resource type="Texture2D" uid="uid://djwfjos0iiqje" path="res://assets/botonPlay.png" id="5_f4jq7"]
+[ext_resource type="Texture2D" uid="uid://c2wa6nbix6r8u" path="res://assets/botonSalir.png" id="5_sxoq4"]
+[ext_resource type="FontFile" uid="uid://bxvuw4qvy4rsd" path="res://Fredoka_Condensed-Bold.ttf" id="6_f4jq7"]
+[ext_resource type="Texture2D" uid="uid://br5fci0mrs8mo" path="res://assets/creditos.png" id="8_e6vvj"]
+
+[sub_resource type="Theme" id="Theme_sxoq4"]
+default_font = ExtResource("6_f4jq7")
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_e6vvj"]
+default_font = ExtResource("6_f4jq7")
+default_font_size = 45
+
+[node name="MatildaLab" type="Node2D"]
+script = ExtResource("1_wg4ci")
+
+[node name="Escena" type="Node2D" parent="."]
+
+[node name="Interfaz" type="CanvasLayer" parent="."]
+
+[node name="Inicio" type="TextureRect" parent="Interfaz"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2pt4b")
+expand_mode = 1
+
+[node name="Fin" type="TextureRect" parent="Interfaz"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_tsv6s")
+expand_mode = 1
+
+[node name="BotonCerrar" type="TextureButton" parent="Interfaz"]
+z_index = 5
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -492.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 492.0
+grow_horizontal = 0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(512, 0)
+texture_normal = ExtResource("5_1wudq")
+
+[node name="BotonSalir" type="TextureButton" parent="Interfaz"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -206.0
+offset_top = -349.0
+offset_right = 306.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+disabled = true
+texture_normal = ExtResource("5_sxoq4")
+
+[node name="BotonPlay" type="TextureButton" parent="Interfaz"]
+modulate = Color(1, 1, 0, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -229.0
+offset_top = -361.0
+offset_right = 217.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(223, 223)
+texture_normal = ExtResource("5_f4jq7")
+
+[node name="Animaciones" type="VideoStreamPlayer" parent="Interfaz"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DialogoCerrar" type="ConfirmationDialog" parent="Interfaz"]
+mode = 2
+title = ""
+initial_position = 1
+size = Vector2i(550, 156)
+content_scale_aspect = 4
+theme = SubResource("Theme_sxoq4")
+ok_button_text = "SÍ"
+dialog_text = "¿Quieres cerrar el juego?"
+dialog_autowrap = true
+cancel_button_text = "NO"
+
+[node name="Creditos" type="AcceptDialog" parent="Interfaz"]
+title = "Créditos"
+initial_position = 2
+size = Vector2i(1392, 573)
+theme = SubResource("Theme_e6vvj")
+ok_button_text = "CERRAR"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interfaz/Creditos"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1384.0
+offset_bottom = 492.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Desarrollo" type="Label" parent="Interfaz/Creditos/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "DISEÑO Y DESARROLLO: Irene Lancho Romo "
+horizontal_alignment = 1
+
+[node name="Arte" type="Label" parent="Interfaz/Creditos/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "ARTE E ILUSTRACIÓN:  Irene Lancho Romo, Ana Lannelongue García"
+horizontal_alignment = 1
+
+[node name="Voces" type="Label" parent="Interfaz/Creditos/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "VOCES: Lucía Cuevas Sánchez, Irene Hernández Gómez, Paula Moñino Elías, 
+Amanda Pellitero Parrilla,Eva Serrano Donate, Lucía Vallejo Romo"
+horizontal_alignment = 1
+
+[node name="Tutoría" type="Label" parent="Interfaz/Creditos/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "TUTORÍA: Cristina Alonso Fernández"
+horizontal_alignment = 1
+
+[node name="BotonCreditos" type="TextureButton" parent="Interfaz"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -205.0
+offset_top = -35.0
+offset_right = 307.0
+offset_bottom = 477.0
+grow_horizontal = 0
+scale = Vector2(0.4, 0.4)
+disabled = true
+texture_normal = ExtResource("8_e6vvj")
+
+[node name="BaseDeDatos" type="HTTPRequest" parent="."]
+
+[node name="Sonidos" type="AudioStreamPlayer" parent="."]
+volume_db = -30.0
+
+[connection signal="pressed" from="Interfaz/BotonCerrar" to="." method="_on_boton_cerrar_pressed"]
+[connection signal="pressed" from="Interfaz/BotonSalir" to="." method="_on_boton_salir_pressed"]
+[connection signal="pressed" from="Interfaz/BotonPlay" to="." method="iniciar_juego"]
+[connection signal="confirmed" from="Interfaz/DialogoCerrar" to="." method="_on_dialogo_cerrar_confirmed"]
+[connection signal="pressed" from="Interfaz/BotonCreditos" to="." method="_on_boton_creditos_pressed"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://2dprfqm407o5"]
+
+[ext_resource type="PackedScene" uid="uid://d78rxhadrt74" path="res://minijuego-mary-agnes-chase/flor.tscn" id="1_rhmlx"]
+[ext_resource type="Texture2D" uid="uid://dpvsbfk5k4myk" path="res://minijuego-mary-agnes-chase/assets/petalos flor rosa.png" id="2_wum8c"]
+[ext_resource type="Texture2D" uid="uid://cqueoit7asn12" path="res://minijuego-mary-agnes-chase/assets/tallo flor rosa.png" id="3_mc5ee"]
+[ext_resource type="Texture2D" uid="uid://b7r4kyg4b87rl" path="res://minijuego-mary-agnes-chase/assets/boceto flor rosa.png" id="4_5wugx"]
+
+[node name="Flor" instance=ExtResource("1_rhmlx")]
+nombre_flor = "un lirio"
+sprite_petalos = ExtResource("2_wum8c")
+sprite_tallo = ExtResource("3_mc5ee")
+boceto = ExtResource("4_5wugx")
+color_petalos = Color(0.886275, 0.494118, 0.729412, 1)
+color_tallo = Color(0.14902, 0.392157, 0, 1)

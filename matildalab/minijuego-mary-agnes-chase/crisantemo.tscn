@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://durlb7cb4ilhh"]
+
+[ext_resource type="PackedScene" uid="uid://d78rxhadrt74" path="res://minijuego-mary-agnes-chase/flor.tscn" id="1_dc6jx"]
+[ext_resource type="Texture2D" uid="uid://dglr3htvjpbm8" path="res://minijuego-mary-agnes-chase/assets/petalos crisantemo.png" id="2_4yr1l"]
+[ext_resource type="Texture2D" uid="uid://dojykj7smcq08" path="res://minijuego-mary-agnes-chase/assets/centro crisantemo.png" id="3_0fvmb"]
+[ext_resource type="Texture2D" uid="uid://cvwxljfwmk2si" path="res://minijuego-mary-agnes-chase/assets/tallo crisantemo.png" id="4_e8pm4"]
+[ext_resource type="Texture2D" uid="uid://kodjtf3c1m7c" path="res://minijuego-mary-agnes-chase/assets/boceto crisantemo.png" id="5_e8grc"]
+
+[node name="Flor" instance=ExtResource("1_dc6jx")]
+nombre_flor = "un crisantemo"
+sprite_petalos = ExtResource("2_4yr1l")
+sprite_centro = ExtResource("3_0fvmb")
+sprite_tallo = ExtResource("4_e8pm4")
+boceto = ExtResource("5_e8grc")
+color_petalos = Color(1, 0.952941, 0.101961, 1)
+color_centro = Color(1, 0.752941, 0.258824, 1)
+color_tallo = Color(0.14902, 0.392157, 0, 1)

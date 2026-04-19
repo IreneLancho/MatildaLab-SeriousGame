@@ -1,0 +1,1109 @@
+[gd_scene load_steps=82 format=3 uid="uid://bad2pajsmaddf"]
+
+[ext_resource type="Script" uid="uid://hetgxjakopof" path="res://minijuego-marie-curie/main.gd" id="1_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://dm7sigy5pxy1c" path="res://minijuego-marie-curie/assets/fondo.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bbi0dy6vgevf3" path="res://minijuego-marie-curie/material.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b41mjsj22a3dx" path="res://minijuego-marie-curie/assets/matraz erlenmeyer.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://de0aupkhog5v5" path="res://minijuego-marie-curie/assets/pipeta.png" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://qig7nxiuveli" path="res://minijuego-marie-curie/assets/matraz balón.png" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://cet8hiwerwe5b" path="res://minijuego-marie-curie/assets/matraz erlenmeyer girada.png" id="5_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://l6ee52oia6xb" path="res://minijuego-marie-curie/assets/matraz erlenmeyer volcada.png" id="6_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://c8njg3stl12o5" path="res://minijuego-marie-curie/assets/matraz erlenmeyer vacía.png" id="7_0rl1p"]
+[ext_resource type="Texture2D" uid="uid://b5v1hdmn1esfc" path="res://minijuego-marie-curie/assets/tubo de ensayo azul.png" id="7_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://d1kvi01vyfcjb" path="res://minijuego-marie-curie/assets/vaso de precipitados.png" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cjdn1wud3l3li" path="res://minijuego-marie-curie/assets/pipeta con gotas.png" id="7_kq58d"]
+[ext_resource type="Texture2D" uid="uid://bdbnwvw1mr4k8" path="res://minijuego-marie-curie/assets/soporte tubos.png" id="8_0odxb"]
+[ext_resource type="Texture2D" uid="uid://b5mj8dxc82phn" path="res://minijuego-marie-curie/assets/pipeta vacía.png" id="8_seu75"]
+[ext_resource type="Texture2D" uid="uid://diw6hpxwbfuyr" path="res://minijuego-marie-curie/assets/1.png" id="8_vivmo"]
+[ext_resource type="Texture2D" uid="uid://e5p3k78ijt6s" path="res://minijuego-marie-curie/assets/matraz balón pizarra.png" id="9_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://cd5uypghhf8pq" path="res://minijuego-marie-curie/assets/matraz balón girada.png" id="9_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://bdoq0ceyinlhi" path="res://minijuego-marie-curie/assets/tubo de ensayo naranja.png" id="9_lswn8"]
+[ext_resource type="Texture2D" uid="uid://bvc038ypjk20r" path="res://minijuego-marie-curie/assets/tubo de ensayo rosa.png" id="10_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://cn26dkoq4drtu" path="res://minijuego-marie-curie/assets/matraz balón volcada.png" id="10_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://c1dedn1nc3usb" path="res://minijuego-marie-curie/assets/2.png" id="10_yaehf"]
+[ext_resource type="Texture2D" uid="uid://djgo0d1sgvcvd" path="res://minijuego-marie-curie/assets/pipeta pizarra.png" id="11_074og"]
+[ext_resource type="Texture2D" uid="uid://d4evlkxy6t63s" path="res://minijuego-marie-curie/assets/matraz balón vacía.png" id="11_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://cqwvimhb65aty" path="res://minijuego-marie-curie/assets/3.png" id="12_cegan"]
+[ext_resource type="Texture2D" uid="uid://dukohxrnl4nu3" path="res://minijuego-marie-curie/assets/matraz balón azul.png" id="12_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://ofdfy0byuqwi" path="res://minijuego-marie-curie/assets/matraz erlenmeyer pizarra.png" id="13_82xsv"]
+[ext_resource type="Texture2D" uid="uid://buyi8hkttnn4t" path="res://minijuego-marie-curie/assets/matraz erlenmeyer verde.png" id="13_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://bokl04dwsbxw5" path="res://minijuego-marie-curie/assets/flecha.png" id="14_getpj"]
+[ext_resource type="Texture2D" uid="uid://drsumwf18y3un" path="res://minijuego-marie-curie/assets/pipeta morada.png" id="14_kq58d"]
+[ext_resource type="Texture2D" uid="uid://d4fy3565w686" path="res://minijuego-marie-curie/assets/vaso de precipitados pizarra.png" id="15_ryguw"]
+[ext_resource type="Script" uid="uid://p06742r72k12" path="res://minijuego-marie-curie/vaso.gd" id="17_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://crwidnrmrneki" path="res://minijuego-marie-curie/assets/tubo azul girado.png" id="19_4ydwc"]
+[ext_resource type="Texture2D" uid="uid://bd8bljyfmxiri" path="res://minijuego-marie-curie/assets/tubo azul volcado.png" id="20_bde6l"]
+[ext_resource type="Texture2D" uid="uid://gte1rmkrmhoq" path="res://minijuego-marie-curie/assets/tubo azul vacío.png" id="21_mqpf3"]
+[ext_resource type="Texture2D" uid="uid://bt8cmyofltckr" path="res://minijuego-marie-curie/assets/4.png" id="21_seu75"]
+[ext_resource type="Texture2D" uid="uid://c45w0hmpvwn6s" path="res://minijuego-marie-curie/assets/tubo azul pizarra.png" id="22_htxhm"]
+[ext_resource type="AudioStream" uid="uid://bogcr8sk7x1lw" path="res://minijuego-marie-curie/sonidos/viacheslavstarostin-kids-happy-background-music-366043.mp3" id="37_facbu"]
+[ext_resource type="AudioStream" uid="uid://cvilbqkl0oke6" path="res://sonidos/dragon-studio-correct-472358.mp3" id="38_come4"]
+[ext_resource type="Texture2D" uid="uid://cy4lli4w6o4d1" path="res://assets/botonAyuda.png" id="38_qomi5"]
+[ext_resource type="Texture2D" uid="uid://m5amf8nbk8fi" path="res://assets/botonAyudaPresionado.png" id="39_4ydwc"]
+[ext_resource type="AudioStream" uid="uid://wurbcygt0sk0" path="res://sonidos/universfield-error-010-206498.mp3" id="39_h8e4i"]
+[ext_resource type="PackedScene" uid="uid://15m0p8nbne44" path="res://minijuego-marie-curie/tutorial.tscn" id="40_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://cy2ebu6usjj70" path="res://minijuego-marie-curie/assets/cientifica.png" id="43_4ydwc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5vw27"]
+radius = 164.0
+height = 424.0
+
+[sub_resource type="Animation" id="Animation_0odxb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_lquwl")]
+}
+
+[sub_resource type="Animation" id="Animation_0cp0l"]
+resource_name = "acierto"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_lquwl"), ExtResource("5_jq2sk"), ExtResource("6_4k2k6"), ExtResource("7_0rl1p")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2236, -368), Vector2(2236, -368), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Recipiente")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"llenarse"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../Sonidos/Acierto")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1u8w0"]
+resource_name = "fallo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(15, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Sonidos/Fallo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lswn8"]
+_data = {
+&"RESET": SubResource("Animation_0odxb"),
+&"acierto": SubResource("Animation_0cp0l"),
+&"fallo": SubResource("Animation_1u8w0")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jq2sk"]
+radius = 108.0
+height = 376.0
+
+[sub_resource type="Animation" id="Animation_a6jrf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lswn8"]
+resource_name = "fallo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(15, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Sonidos/Fallo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xuqvo"]
+_data = {
+&"RESET": SubResource("Animation_a6jrf"),
+&"fallo": SubResource("Animation_lswn8")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kek77"]
+radius = 55.8173
+height = 556.237
+
+[sub_resource type="Animation" id="Animation_qsp4k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_7mycd")]
+}
+
+[sub_resource type="Animation" id="Animation_come4"]
+resource_name = "acierto"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_7mycd"), ExtResource("7_kq58d"), ExtResource("8_seu75")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2328.57, -640), Vector2(2328.57, -640), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Recipiente")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"llenarse"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../Sonidos/Acierto")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_xuqvo"]
+resource_name = "fallo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(15, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Sonidos/Fallo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kq58d"]
+_data = {
+&"RESET": SubResource("Animation_qsp4k"),
+&"acierto": SubResource("Animation_come4"),
+&"fallo": SubResource("Animation_xuqvo")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4k2k6"]
+radius = 160.0
+height = 448.0
+
+[sub_resource type="Animation" id="Animation_htxhm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_seu75"]
+resource_name = "fallo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(15, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Sonidos/Fallo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jq2sk"]
+_data = {
+&"RESET": SubResource("Animation_htxhm"),
+&"fallo": SubResource("Animation_seu75")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4c57u"]
+radius = 100.013
+height = 304.0
+
+[sub_resource type="Animation" id="Animation_0rl1p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_272bh")]
+}
+
+[sub_resource type="Animation" id="Animation_ok6jj"]
+resource_name = "acierto"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_272bh"), ExtResource("9_a6jrf"), ExtResource("10_xuqvo"), ExtResource("11_qsp4k")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1112, -250), Vector2(1112, -250), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Recipiente")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"llenarse"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../Sonidos/Acierto")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4k2k6"]
+resource_name = "fallo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(15, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Sonidos/Fallo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ok6jj"]
+_data = {
+&"RESET": SubResource("Animation_0rl1p"),
+&"acierto": SubResource("Animation_ok6jj"),
+&"fallo": SubResource("Animation_4k2k6")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0rl1p"]
+radius = 32.0
+height = 619.425
+
+[sub_resource type="Animation" id="Animation_b1qrp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_facbu"]
+resource_name = "fallo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(15, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Sonidos/Fallo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_come4"]
+_data = {
+&"RESET": SubResource("Animation_b1qrp"),
+&"fallo": SubResource("Animation_facbu")
+}
+
+[sub_resource type="Animation" id="Animation_3g6a6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_1u8w0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nuvrj"]
+resource_name = "acierto"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_1u8w0"), ExtResource("19_4ydwc"), ExtResource("20_bde6l"), ExtResource("21_mqpf3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(538, -170), Vector2(538, -170), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../Sonidos/Acierto")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Recipiente")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"llenarse"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4ydwc"]
+resource_name = "fallo"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../Sonidos/Fallo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7.45058e-09, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(15, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qomi5"]
+_data = {
+&"RESET": SubResource("Animation_3g6a6"),
+&"acierto": SubResource("Animation_nuvrj"),
+&"fallo": SubResource("Animation_4ydwc")
+}
+
+[sub_resource type="Animation" id="Animation_gngh3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d2t1y"]
+resource_name = "fallo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(15, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Sonidos/Fallo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0n3wm"]
+_data = {
+&"RESET": SubResource("Animation_gngh3"),
+&"fallo": SubResource("Animation_d2t1y")
+}
+
+[sub_resource type="Animation" id="Animation_jq2sk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kq58d"]
+resource_name = "fallo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(15, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Sonidos/Fallo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4k2k6"]
+_data = {
+&"RESET": SubResource("Animation_jq2sk"),
+&"fallo": SubResource("Animation_kq58d")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
+size = Vector2(298, 360)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2cqfq")
+
+[node name="Fondo" type="TextureRect" parent="."]
+z_index = -1
+texture = ExtResource("1_ig7tw")
+
+[node name="Sonidos" type="Node" parent="."]
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="Sonidos"]
+stream = ExtResource("37_facbu")
+volume_db = -35.0
+parameters/looping = true
+
+[node name="Acierto" type="AudioStreamPlayer" parent="Sonidos"]
+stream = ExtResource("38_come4")
+volume_db = -20.0
+
+[node name="Fallo" type="AudioStreamPlayer" parent="Sonidos"]
+stream = ExtResource("39_h8e4i")
+volume_db = -20.0
+pitch_scale = 1.5
+
+[node name="Minijuego" type="Node2D" parent="."]
+
+[node name="Materiales" type="Node2D" parent="Minijuego"]
+
+[node name="Material1" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(376, 691)
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Material1" index="0"]
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("3_lquwl")
+offset = Vector2(0, 150)
+
+[node name="CollisionShape2D" parent="Minijuego/Materiales/Material1" index="1"]
+shape = SubResource("CapsuleShape2D_5vw27")
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Materiales/Material1"]
+libraries = {
+&"": SubResource("AnimationLibrary_lswn8")
+}
+
+[node name="Material2" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(530, 701)
+scale = Vector2(0.35, 0.35)
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Material2" index="0"]
+texture = ExtResource("12_xuqvo")
+
+[node name="CollisionShape2D" parent="Minijuego/Materiales/Material2" index="1"]
+position = Vector2(4, 44)
+shape = SubResource("CapsuleShape2D_jq2sk")
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Materiales/Material2"]
+libraries = {
+&"": SubResource("AnimationLibrary_xuqvo")
+}
+
+[node name="Material3" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(657, 722)
+scale = Vector2(0.35, 0.35)
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Material3" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_7mycd")
+offset = Vector2(0, 150)
+
+[node name="CollisionShape2D" parent="Minijuego/Materiales/Material3" index="1"]
+position = Vector2(-8, -6)
+rotation = -0.756627
+shape = SubResource("CapsuleShape2D_kek77")
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Materiales/Material3"]
+libraries = {
+&"": SubResource("AnimationLibrary_kq58d")
+}
+
+[node name="Material4" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(776, 729)
+scale = Vector2(0.25, 0.25)
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Material4" index="0"]
+texture = ExtResource("13_qsp4k")
+
+[node name="CollisionShape2D" parent="Minijuego/Materiales/Material4" index="1"]
+shape = SubResource("CapsuleShape2D_4k2k6")
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Materiales/Material4"]
+libraries = {
+&"": SubResource("AnimationLibrary_jq2sk")
+}
+
+[node name="Material5" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(892, 610)
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Material5" index="0"]
+scale = Vector2(1.6, 1.6)
+offset = Vector2(0, 250)
+
+[node name="CollisionShape2D" parent="Minijuego/Materiales/Material5" index="1"]
+position = Vector2(0, 192)
+shape = SubResource("CapsuleShape2D_4c57u")
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Materiales/Material5"]
+libraries = {
+&"": SubResource("AnimationLibrary_ok6jj")
+}
+
+[node name="Material6" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(1042, 726)
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Material6" index="0"]
+texture = ExtResource("14_kq58d")
+
+[node name="CollisionShape2D" parent="Minijuego/Materiales/Material6" index="1"]
+position = Vector2(-2, -2)
+rotation = 2.35458
+shape = SubResource("CapsuleShape2D_0rl1p")
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Materiales/Material6"]
+libraries = {
+&"": SubResource("AnimationLibrary_come4")
+}
+
+[node name="Material7" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(1182, 669)
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Material7" index="0"]
+texture = ExtResource("7_1u8w0")
+offset = Vector2(76, -22)
+
+[node name="CollisionShape2D" parent="Minijuego/Materiales/Material7" index="1"]
+position = Vector2(-26, 20)
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Materiales/Material7"]
+libraries = {
+&"": SubResource("AnimationLibrary_qomi5")
+}
+
+[node name="Soporte Tubos" type="Sprite2D" parent="Minijuego/Materiales"]
+z_index = 1
+position = Vector2(1218, 658)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_0odxb")
+
+[node name="Material8" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(1217, 668)
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Material8" index="0"]
+texture = ExtResource("9_lswn8")
+offset = Vector2(108, -20)
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Materiales/Material8"]
+libraries = {
+&"": SubResource("AnimationLibrary_0n3wm")
+}
+
+[node name="Material9" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(1263, 673)
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Material9" index="0"]
+texture = ExtResource("10_a6jrf")
+offset = Vector2(108, -30)
+
+[node name="CollisionShape2D" parent="Minijuego/Materiales/Material9" index="1"]
+position = Vector2(4, 14)
+
+[node name="Animador" type="AnimationPlayer" parent="Minijuego/Materiales/Material9"]
+libraries = {
+&"": SubResource("AnimationLibrary_4k2k6")
+}
+
+[node name="Recipiente" parent="Minijuego/Materiales" instance=ExtResource("2_0xm2m")]
+position = Vector2(1531, 700)
+script = ExtResource("17_xuqvo")
+
+[node name="Sprite2D" parent="Minijuego/Materiales/Recipiente" index="0"]
+texture = ExtResource("7_5vw27")
+offset = Vector2(-10, -2)
+
+[node name="CollisionShape2D" parent="Minijuego/Materiales/Recipiente" index="1"]
+position = Vector2(-13, -20)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="Interfaz" type="Node" parent="Minijuego"]
+
+[node name="Pizarra" type="Control" parent="Minijuego/Interfaz"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Instrucciones" type="VBoxContainer" parent="Minijuego/Interfaz/Pizarra"]
+layout_mode = 2
+offset_left = 526.0
+offset_top = 88.0
+offset_right = 2586.0
+offset_bottom = 1116.0
+scale = Vector2(0.35, 0.35)
+theme_override_constants/separation = -150
+
+[node name="Numeros" type="HBoxContainer" parent="Minijuego/Interfaz/Pizarra/Instrucciones"]
+layout_mode = 2
+
+[node name="1" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/Instrucciones/Numeros"]
+layout_mode = 2
+texture = ExtResource("8_vivmo")
+
+[node name="2" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/Instrucciones/Numeros"]
+layout_mode = 2
+texture = ExtResource("10_yaehf")
+
+[node name="3" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/Instrucciones/Numeros"]
+layout_mode = 2
+texture = ExtResource("12_cegan")
+
+[node name="4" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/Instrucciones/Numeros"]
+layout_mode = 2
+texture = ExtResource("21_seu75")
+
+[node name="ReferenciaMateriales" type="HBoxContainer" parent="Minijuego/Interfaz/Pizarra/Instrucciones"]
+layout_mode = 2
+
+[node name="MatrazBalónPizarra" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/Instrucciones/ReferenciaMateriales"]
+layout_mode = 2
+texture = ExtResource("9_2cqfq")
+
+[node name="PipetaPizarra" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/Instrucciones/ReferenciaMateriales"]
+layout_mode = 2
+texture = ExtResource("11_074og")
+
+[node name="MatrazErlenmeyerPizarra" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/Instrucciones/ReferenciaMateriales"]
+layout_mode = 2
+texture = ExtResource("13_82xsv")
+
+[node name="TuboAzulPizarra" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/Instrucciones/ReferenciaMateriales"]
+layout_mode = 2
+texture = ExtResource("22_htxhm")
+
+[node name="ReferenciaRecipiente" type="VBoxContainer" parent="Minijuego/Interfaz/Pizarra"]
+layout_mode = 0
+offset_left = 1173.0
+offset_top = 239.0
+offset_right = 1685.0
+offset_bottom = 1267.0
+scale = Vector2(0.4, 0.4)
+theme_override_constants/separation = -200
+
+[node name="Flecha" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/ReferenciaRecipiente"]
+layout_mode = 2
+texture = ExtResource("14_getpj")
+
+[node name="VasoDePrecipitadosPizarra" type="TextureRect" parent="Minijuego/Interfaz/Pizarra/ReferenciaRecipiente"]
+layout_mode = 2
+texture = ExtResource("15_ryguw")
+
+[node name="BotonAyuda" type="TextureButton" parent="Minijuego/Interfaz"]
+offset_left = 1715.2
+offset_top = 50.0
+offset_right = 2227.2
+offset_bottom = 562.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("38_qomi5")
+texture_pressed = ExtResource("39_4ydwc")
+
+[node name="Marie Curie" type="TextureRect" parent="Minijuego/Interfaz"]
+offset_left = -267.0
+offset_top = 105.0
+offset_right = 825.0
+offset_bottom = 1705.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("43_4ydwc")
+
+[node name="TutorialLayer" type="CanvasLayer" parent="Minijuego/Interfaz"]
+
+[node name="Tutorial" parent="Minijuego/Interfaz/TutorialLayer" instance=ExtResource("40_h8e4i")]
+z_index = 1
+
+[connection signal="material_soltado" from="Minijuego/Materiales/Material1" to="." method="_on_material_soltado"]
+[connection signal="material_soltado" from="Minijuego/Materiales/Material2" to="." method="_on_material_soltado"]
+[connection signal="material_soltado" from="Minijuego/Materiales/Material3" to="." method="_on_material_soltado"]
+[connection signal="material_soltado" from="Minijuego/Materiales/Material4" to="." method="_on_material_soltado"]
+[connection signal="material_soltado" from="Minijuego/Materiales/Material5" to="." method="_on_material_soltado"]
+[connection signal="material_soltado" from="Minijuego/Materiales/Material6" to="." method="_on_material_soltado"]
+[connection signal="material_soltado" from="Minijuego/Materiales/Material7" to="." method="_on_material_soltado"]
+[connection signal="material_soltado" from="Minijuego/Materiales/Material8" to="." method="_on_material_soltado"]
+[connection signal="material_soltado" from="Minijuego/Materiales/Material9" to="." method="_on_material_soltado"]
+[connection signal="pressed" from="Minijuego/Interfaz/BotonAyuda" to="." method="_on_boton_ayuda_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/BotonAyuda" to="Minijuego/Interfaz/TutorialLayer/Tutorial" method="_on_boton_ayuda_pressed"]
+[connection signal="pressed" from="Minijuego/Interfaz/TutorialLayer/Tutorial/Videotutorial/BotonPlay" to="." method="iniciar_juego"]
+[connection signal="pressed" from="Minijuego/Interfaz/TutorialLayer/Tutorial/Videotutorial/BotonPlay" to="Minijuego/Interfaz/TutorialLayer/Tutorial" method="_on_boton_play_pressed"]
+
+[editable path="Minijuego/Materiales/Material1"]
+[editable path="Minijuego/Materiales/Material2"]
+[editable path="Minijuego/Materiales/Material3"]
+[editable path="Minijuego/Materiales/Material4"]
+[editable path="Minijuego/Materiales/Material5"]
+[editable path="Minijuego/Materiales/Material6"]
+[editable path="Minijuego/Materiales/Material7"]
+[editable path="Minijuego/Materiales/Material8"]
+[editable path="Minijuego/Materiales/Material9"]
+[editable path="Minijuego/Materiales/Recipiente"]
+[editable path="Minijuego/Interfaz/TutorialLayer/Tutorial"]
