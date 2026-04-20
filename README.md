@@ -1,1 +1,6 @@
 MatildaLab es un videojuego diseñado y desarrollado como Trabajo de Fin de Grado (TFG) en colaboración con el grupo de investigación [eUCM](https://www.e-ucm.es/es/). Su objetivo es mitigar los estereotipos de género desde edades tempranas, ayudando a visibilizar a mujeres científicas. Está pensado como una herramienta didáctica para profesionales de la educación, permitiendo proporcionar referentes femeninos en el ámbito científico a alumnos de 1º de Educación Primaria. Todos los recursos gráficos poseen una licencia **CC BY-NC-SA** (Creative Commons Attribution Non-Commercial Share Alike).
+
+* **Diseño y desarrollo:** Irene Lancho Romo
+* **Arte e Ilustración:** Irene Lancho Romo y Ana Lannelongue García
+* **Voces:** Lucía Cuevas Sánchez, Irene Hernández Gómez, Paula Moñino Elías, Amanda Pellitero Parrilla, Eva Serrano Donate y Lucía Vallejo Romo
+* **Directora del proyecto:** Cristina Alonso Fernández
