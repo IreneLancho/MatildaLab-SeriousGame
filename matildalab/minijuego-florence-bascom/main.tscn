@@ -102,7 +102,7 @@ id_mineral = 3
 [node name="Icono" parent="Minijuego/Minerales/Pirita2/Dibujos/Frente" index="1"]
 texture = ExtResource("6_5vw27")
 
-[node name="Interfaz" type="Node" parent="Minijuego"]
+[node name="Interfaz" type="CanvasLayer" parent="Minijuego"]
 
 [node name="BotonAyuda" type="TextureButton" parent="Minijuego/Interfaz"]
 offset_left = 1715.2
@@ -114,7 +114,7 @@ texture_normal = ExtResource("8_13srr")
 texture_pressed = ExtResource("9_7m2u2")
 
 [node name="Florence" parent="Minijuego/Interfaz" instance=ExtResource("11_7m2u2")]
-layer = 0
+layer = 1
 
 [node name="TutorialLayer" type="CanvasLayer" parent="Minijuego/Interfaz"]
 

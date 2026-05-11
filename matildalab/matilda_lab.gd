@@ -2,18 +2,18 @@ extends Node
 class_name MatildaLab  
 
 ########### REFERENCIAS A NODOS ###########
-@onready var Animaciones = $Interfaz/Animaciones
-@onready var Inicio = $Interfaz/Inicio
-@onready var Fin = $Interfaz/Fin
-@onready var BotonPlay = $Interfaz/BotonPlay
-@onready var BotonSalir = $Interfaz/BotonSalir
-@onready var BotonCerrar = $Interfaz/BotonCerrar
-@onready var DialogoCerrar = $Interfaz/DialogoCerrar
+@onready var Animaciones = $InterfazPrincipal/Animaciones
+@onready var Inicio = $InterfazPrincipal/Inicio
+@onready var Fin = $InterfazPrincipal/Fin
+@onready var BotonPlay = $InterfazPrincipal/BotonPlay
+@onready var BotonSalir = $InterfazPrincipal/BotonSalir
+@onready var BotonCerrar = $InterfazPrincipal/BotonCerrar
+@onready var DialogoCerrar = $InterfazPrincipal/DialogoCerrar
 @onready var Escena = $Escena
 @onready var BaseDeDatos = $BaseDeDatos
 @onready var Sonidos = $Sonidos
-@onready var BotonCreditos = $Interfaz/BotonCreditos
-@onready var Creditos = $Interfaz/Creditos
+@onready var BotonCreditos = $InterfazPrincipal/BotonCreditos
+@onready var Creditos = $InterfazPrincipal/Creditos
 
 ########### VARIABLES GLOBALES ###########
 # Lista que une cada escena de minijuego con la ruta que debe seguir en el mapa
@@ -30,13 +30,17 @@ var ruta_actual = "Florence" # La ruta que el mapa debe seguir actualmente
 var animacion_inicial = "res://videos/IntroMatilda.ogv"
 var animacion_final = "res://videos/Fin.ogv"
 static var instancia # Instancia estática de la escena para poder llamarla fácilmente desde nodos inferiores en la jerarquía
+var evaluacion = -1
 
 ########### MÉTRICAS ###########
 var usuario = ""
 var resultados = {}
 var tiempo_inicio = 0
-var url_formulario = "https://docs.google.com/forms/d/e/1FAIpQLSc_BQXzKbeGhdca3ZxU49EgiU_vMWbYOL856wVKPw2Mo1T-tA/formResponse?usp=pp_url"
-var cabecera = ["Content-Type: application/x-www-form-urlencoded"]
+var url_formulario = "https://docs.google.com/forms/d/e/1FAIpQLSf2zfZk5fLCPwZIM1W50-Tm7nV5X1gAMcsYwqmk_cyaCXQggA/formResponse"
+var cabecera = [
+	"Content-Type: application/x-www-form-urlencoded",
+	"User-Agent: Mozilla/5.0 (Android; Mobile; rv:100.0)"
+]
 
 ########### FUNCIONES ###########
 """
@@ -63,9 +67,9 @@ func iniciar_juego() -> void:
 	BotonPlay.disabled = true
 	BotonPlay.visible = false
 	for esc in Escena.get_children(): esc.queue_free()
-	Animaciones.stream = load(animacion_inicial)
-	Animaciones.play()
-	await Animaciones.finished
+	#Animaciones.stream = load(animacion_inicial)
+	#Animaciones.play()
+	#await Animaciones.finished
 	terminar_minijuego()
 	
 """
@@ -84,19 +88,23 @@ func siguiente_minijuego() -> void:
 		ruta_actual = info_minijuego["ruta"]
 		index_minijuego += 1
 	else:
-		guardar_resultados()
 		Animaciones.stream = load(animacion_final)
 		Animaciones.play()
 		Fin.visible = true
 		await Animaciones.finished
-		BotonSalir.visible = true
-		BotonSalir.disabled = false
+		Animaciones.hide()
 		BotonCerrar.visible = false
 		BotonCerrar.disabled = true
-		BotonCreditos.visible = true
-		BotonCreditos.disabled = false
 		Sonidos.stream = load("res://sonidos/openmindaudio-cartoon-kids-victory-sting-little-winner-glow-500914.mp3")
 		Sonidos.play()
+		var escena_evaluacion = load("res://evaluacion.tscn").instantiate()
+		Escena.add_child(escena_evaluacion)
+		await escena_evaluacion.tree_exited
+		guardar_resultados()
+		BotonSalir.visible = true
+		BotonSalir.disabled = false
+		BotonCreditos.visible = true
+		BotonCreditos.disabled = false
 
 """
 Esta función se llama al ganar un minijuego y cambia la escena a la escena 
@@ -169,10 +177,11 @@ func guardar_resultados():
 	var tiempos = formatear_metrica("tiempo")
 	var fallos = formatear_metrica("fallos")
 	var intentos = formatear_metrica("intentos")
-	var datos = "entry.406128988=" + usuario.uri_encode()
-	datos += "&entry.798513038=" + tiempos.uri_encode()
-	datos += "&entry.2019650669=" + fallos.uri_encode()
-	datos += "&entry.607113045=" + intentos.uri_encode()
+	var datos = "&entry.841595892=" + usuario.uri_encode()
+	datos += "&entry.741908478=" + tiempos.uri_encode()
+	datos += "&entry.1341109316=" + fallos.uri_encode()
+	datos += "&entry.1641816708=" + intentos.uri_encode()
+	datos += "&entry.1375514244=" + str(evaluacion).uri_encode()
 	BaseDeDatos.request(url_formulario, cabecera, HTTPClient.METHOD_POST, datos)
 	
 """

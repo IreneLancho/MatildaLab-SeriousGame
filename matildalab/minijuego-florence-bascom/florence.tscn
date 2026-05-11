@@ -43,6 +43,7 @@ _data = {
 }
 
 [node name="Florence" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_k270g")
 
 [node name="BordeDerecho" type="Control" parent="."]

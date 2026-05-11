@@ -990,7 +990,7 @@ offset = Vector2(-10, -2)
 position = Vector2(-13, -20)
 shape = SubResource("RectangleShape2D_dg77c")
 
-[node name="Interfaz" type="Node" parent="Minijuego"]
+[node name="Interfaz" type="CanvasLayer" parent="Minijuego"]
 
 [node name="Pizarra" type="Control" parent="Minijuego/Interfaz"]
 layout_mode = 3

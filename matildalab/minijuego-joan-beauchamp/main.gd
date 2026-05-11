@@ -51,10 +51,12 @@ func siguiente_reptil():
 		else: Etiqueta.text = "Encuentra a la " + nombre_reptil
 		var ruta = "res://minijuego-joan-beauchamp/assets/" + nombre_reptil + "_bonito.png"
 		ExplicacionReptil.stream = load("res://minijuego-joan-beauchamp/sonidos/" + nombre_reptil + ".mp3")
+		BotonAyuda.disabled = true
 		ExplicacionReptil.play()
 		ReptilABuscar.texture = load(ruta)
 		Animador.play("mostrar_reptil")
 		await Animador.animation_finished
+		BotonAyuda.disabled = false
 		reptil_escondido.visible = true
 		reptil_escondido.disabled = false
 	

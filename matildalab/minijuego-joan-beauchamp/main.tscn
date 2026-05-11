@@ -222,7 +222,16 @@ offset_bottom = 1155.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("6_4c57u")
 
-[node name="Interfaz" type="Node" parent="Minijuego"]
+[node name="Interfaz" type="CanvasLayer" parent="Minijuego"]
+
+[node name="BotonAyuda" type="TextureButton" parent="Minijuego/Interfaz"]
+offset_left = 1715.2
+offset_top = 50.0
+offset_right = 2227.2
+offset_bottom = 562.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_32ly7")
+texture_pressed = ExtResource("9_uxco6")
 
 [node name="CapaPresentacion" type="ColorRect" parent="Minijuego/Interfaz"]
 modulate = Color(1, 1, 1, 0)
@@ -256,15 +265,6 @@ grow_vertical = 2
 scale = Vector2(1.1, 1.1)
 pivot_offset = Vector2(256, 256)
 stretch_mode = 5
-
-[node name="BotonAyuda" type="TextureButton" parent="Minijuego/Interfaz"]
-offset_left = 1715.2
-offset_top = 50.0
-offset_right = 2227.2
-offset_bottom = 562.0
-scale = Vector2(0.4, 0.4)
-texture_normal = ExtResource("8_32ly7")
-texture_pressed = ExtResource("9_uxco6")
 
 [node name="Joan" type="TextureRect" parent="Minijuego/Interfaz"]
 offset_left = 789.0

@@ -184,7 +184,7 @@ texture_normal = ExtResource("5_lquwl")
 z_index = 1
 rotation = -2.0944
 
-[node name="Interfaz" type="Node" parent="Minijuego"]
+[node name="Interfaz" type="CanvasLayer" parent="Minijuego"]
 
 [node name="MaryAgnes" parent="Minijuego/Interfaz" instance=ExtResource("18_vdohw")]
 
