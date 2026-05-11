@@ -67,9 +67,9 @@ func iniciar_juego() -> void:
 	BotonPlay.disabled = true
 	BotonPlay.visible = false
 	for esc in Escena.get_children(): esc.queue_free()
-	#Animaciones.stream = load(animacion_inicial)
-	#Animaciones.play()
-	#await Animaciones.finished
+	Animaciones.stream = load(animacion_inicial)
+	Animaciones.play()
+	await Animaciones.finished
 	terminar_minijuego()
 	
 """
